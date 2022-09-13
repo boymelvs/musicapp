@@ -1,0 +1,139 @@
+header {
+   @include flexBox(row, center, space-between, 10px);
+   width: 100%;
+   background: hsl(225, 48%, 46%);
+   padding: 10px 20px 40px 20px;
+   max-width: 1440px;
+   position: relative;
+
+   @media (min-width: 768px) {
+      padding: 10px 20px;
+   }
+
+   @media (min-width: 992px) {
+      padding: 10px 40px;
+   }
+
+   & .logoContainer {
+      width: 60px;
+
+      @media (min-width: 768px) {
+         width: 80px;
+      }
+
+      & img {
+         width: 100%;
+      }
+   }
+
+   & .myNavs {
+      @include flexBox(row, center, center, 50px);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: hsl(0, 0%, 100%);
+      padding-bottom: 10px;
+
+      @media (min-width: 768px) {
+         position: unset;
+         padding: 0;
+      }
+
+      & .menuItem {
+         position: relative;
+         cursor: pointer;
+
+         &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid $whisper;
+            transform: scale(0, 1);
+            transform-origin: right;
+            transition: transform 300ms ease-in-out;
+         }
+
+         &:hover::before {
+            transform: scale(1, 1);
+            transform-origin: left;
+         }
+
+         &.active::before,
+         &.active-link::before {
+            transform: scale(1, 1);
+            transform-origin: left;
+         }
+      }
+   }
+
+   & .profileSearchContainer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+
+      @media (min-width: 992px) {
+         gap: 20px;
+      }
+
+      & .search {
+         padding: 10px;
+         border-radius: 10px;
+         border: none;
+         outline: none;
+         background-image: url("../../images/search/search_black.svg");
+         background-repeat: no-repeat;
+         background-size: 30px;
+         background-position: center right;
+      }
+
+      & .avatar {
+         border-radius: 50%;
+         width: 60px;
+         cursor: pointer;
+      }
+
+      & #profileCheckbox {
+         display: none;
+         visibility: hidden;
+         position: absolute;
+      }
+
+      & .profile {
+         display: none;
+         flex-direction: column;
+         color: $mariner;
+         background: $whisper;
+         border-radius: 5px;
+         position: absolute;
+         top: 70px;
+         right: 0;
+         box-shadow: 0 0 5px $black-pearl;
+         overflow: hidden;
+
+         & .viewProfile,
+         & .logout {
+            padding: 20px 50px;
+            font-weight: $font-weight-700;
+         }
+
+         & .viewProfile,
+         & .logout {
+            &:hover {
+               color: $whisper;
+               background: $mariner;
+               cursor: pointer;
+            }
+         }
+      }
+
+      & #profileCheckbox:checked ~ .profile {
+         display: flex;
+         z-index: 99;
+      }
+   }
+}

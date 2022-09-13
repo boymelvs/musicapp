@@ -1,0 +1,19 @@
+.playerSection {
+   @include flexBox(column, flex-start, center, 0);
+   width: 100%;
+   position: relative;
+
+   @media (min-width: 992px) {
+      flex-direction: row;
+      padding: 20px 0;
+   }
+}
+
+/* Playcard */
+@import "../sections/playcard";
+
+/* Favorite Song */
+@import "../sections/favesongs";
+
+/* Audio Player */
+@import "../sections/audioplayer";

@@ -5,8 +5,8 @@ import sampleSongs from "./assets/songs/SongData";
 // import sampleSongs from "./assets/songs/Songs";
 
 function App() {
-   const CLIENT_ID = "8d9358cede0f4d958fce2896dba9b05f";
-   const CLIENT_SECRET = "549aebdf3c8c4510b741d59fef3c345e";
+   const CLIENT_ID = "";
+   const CLIENT_SECRET = "";
    const [token, setToken] = useState("");
    const [songs, setSongs] = useState(sampleSongs);
 

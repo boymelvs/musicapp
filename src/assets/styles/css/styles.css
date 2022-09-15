@@ -85,10 +85,10 @@ header .profileSearchContainer {
 }
 @media (min-width: 992px) {
   header .profileSearchContainer {
-    gap: 20px;
+    gap: 30px;
   }
 }
-header .profileSearchContainer .search {
+header .profileSearchContainer .searchForm .search {
   padding: 10px;
   border-radius: 10px;
   border: none;
@@ -98,17 +98,44 @@ header .profileSearchContainer .search {
   background-size: 30px;
   background-position: center right;
 }
-header .profileSearchContainer .avatar {
+header .profileSearchContainer .loginSignup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: hsl(0deg, 0%, 100%);
+}
+header .profileSearchContainer .loginSignup span {
+  position: relative;
+  cursor: pointer;
+}
+header .profileSearchContainer .loginSignup span::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(0deg, 0%, 100%);
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform 300ms ease-in-out;
+}
+header .profileSearchContainer .loginSignup span:hover::before {
+  transform: scale(1, 1);
+  transform-origin: left;
+}
+header .profileSearchContainer .avatarContainer .avatar {
   border-radius: 50%;
   width: 60px;
   cursor: pointer;
 }
-header .profileSearchContainer #profileCheckbox {
+header .profileSearchContainer .avatarContainer #profileCheckbox {
   display: none;
   visibility: hidden;
   position: absolute;
 }
-header .profileSearchContainer .profile {
+header .profileSearchContainer .avatarContainer .profile {
   display: none;
   flex-direction: column;
   color: hsl(225deg, 48%, 46%);
@@ -120,16 +147,16 @@ header .profileSearchContainer .profile {
   box-shadow: 0 0 5px hsl(212deg, 29%, 13%);
   overflow: hidden;
 }
-header .profileSearchContainer .profile .viewProfile, header .profileSearchContainer .profile .logout {
+header .profileSearchContainer .avatarContainer .profile .viewProfile, header .profileSearchContainer .avatarContainer .profile .logout {
   padding: 20px 50px;
   font-weight: 700;
 }
-header .profileSearchContainer .profile .viewProfile:hover, header .profileSearchContainer .profile .logout:hover {
+header .profileSearchContainer .avatarContainer .profile .viewProfile:hover, header .profileSearchContainer .avatarContainer .profile .logout:hover {
   color: hsl(0deg, 0%, 100%);
   background: hsl(225deg, 48%, 46%);
   cursor: pointer;
 }
-header .profileSearchContainer #profileCheckbox:checked ~ .profile {
+header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .profile {
   display: flex;
   z-index: 99;
 }
@@ -164,7 +191,6 @@ header .profileSearchContainer #profileCheckbox:checked ~ .profile {
   gap: 20px;
   padding: 20px 10px;
   border-bottom: 5px solid hsl(0deg, 0%, 100%);
-  top: 0;
 }
 @media (min-width: 992px) {
   .cardPlayContainer .cardPlay {
@@ -187,7 +213,6 @@ header .profileSearchContainer #profileCheckbox:checked ~ .profile {
   align-items: unset;
   justify-content: space-between;
   gap: 0;
-  padding: 0 20px;
   width: 350px;
   position: relative;
 }
@@ -210,16 +235,17 @@ header .profileSearchContainer #profileCheckbox:checked ~ .profile {
   justify-content: center;
   gap: 4px;
   transition: all 200ms ease-in-out;
+  position: relative;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
 }
-.cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot .dot {
-  width: 5px;
-  height: 5px;
-  background: hsl(0deg, 0%, 100%);
-  border-radius: 50%;
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot .heart {
+  position: absolute;
+  top: -12px;
+  right: 5px;
+  width: 20px;
 }
 .cardPlayContainer .cardPlay .titleDotContainer #dotCheckbox {
   display: none;
@@ -321,6 +347,7 @@ header .profileSearchContainer #profileCheckbox:checked ~ .profile {
   width: 100%;
   background: hsl(0deg, 0%, 100%);
   transition: all 200ms ease-in-out;
+  position: relative;
 }
 .songContainer .cardSongContainer .cardSong:hover {
   transform: translateY(-3%);
@@ -341,6 +368,16 @@ header .profileSearchContainer #profileCheckbox:checked ~ .profile {
   .songContainer .cardSongContainer .cardSong {
     width: 250px;
   }
+}
+.songContainer .cardSongContainer .cardSong .heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  z-index: 99;
+}
+.songContainer .cardSongContainer .cardSong .heart:hover {
+  transform: scale(1.05);
 }
 .songContainer .cardSongContainer .cardSong .cardSongImg {
   width: 100px;

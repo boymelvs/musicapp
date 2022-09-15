@@ -7,8 +7,6 @@
       @include flexBox(column, center, center, 20px);
       padding: 20px 10px;
       border-bottom: 5px solid $whisper;
-      // position: fixed;
-      top: 0;
 
       @media (min-width: 992px) {
          justify-content: flex-start;
@@ -28,7 +26,7 @@
 
       & .titleDotContainer {
          @include flexBox(row, unset, space-between, 0);
-         padding: 0 20px;
+
          width: 350px;
          position: relative;
 
@@ -45,17 +43,18 @@
          & .cardPlayDot {
             @include flexBox(column, center, center, 4px);
             transition: all 200ms ease-in-out;
+            position: relative;
 
             &:hover {
-               transform: scale(1.1);
+               transform: scale(1.05);
                cursor: pointer;
             }
 
-            & .dot {
-               width: 5px;
-               height: 5px;
-               background: $whisper;
-               border-radius: 50%;
+            & .heart {
+               position: absolute;
+               top: -12px;
+               right: 5px;
+               width: 20px;
             }
          }
 

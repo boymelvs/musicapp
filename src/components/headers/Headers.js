@@ -25,25 +25,32 @@ const Headers = ({ startSearch }) => {
             </div>
 
             <nav className="myNavs">
-               <div className="menuItem nowPlaying">Now Playing</div>
-               <div className="menuItem favoriteSong">Favorite Songs</div>
+               <div className="menuItem nowPlaying active">Now Playing</div>
+               <div className="menuItem favoriteSong">Play Lists</div>
             </nav>
 
             <div className="profileSearchContainer">
-               <form action="" ref={refForm} onSubmit={onFormSubmit}>
+               <form action="" ref={refForm} onSubmit={onFormSubmit} className="searchForm">
                   <input type="text" name="search" id="search" className="search" placeholder="Artist" value={search} onChange={onSearch} />
                </form>
 
-               <input type="checkbox" name="profileCheckbox" id="profileCheckbox" />
+               <div className="loginSignup">
+                  <span className="login">Login</span>
+                  <span className="signup">Signup</span>
+               </div>
 
-               <label htmlFor="profileCheckbox">
-                  <img src={avatar} className="avatar" alt="profile avatar" />
-               </label>
+               <div className="avatarContainer" style={{ display: "none" }}>
+                  <input type="checkbox" name="profileCheckbox" id="profileCheckbox" />
 
-               <label htmlFor="profileCheckbox" className="profile">
-                  <span className="viewProfile">View Profile</span>
-                  <span className="logout">Logout</span>
-               </label>
+                  <label htmlFor="profileCheckbox">
+                     <img src={avatar} className="avatar" alt="profile avatar" />
+                  </label>
+
+                  <label htmlFor="profileCheckbox" className="profile">
+                     <span className="viewProfile">View Profile</span>
+                     <span className="logout">Logout</span>
+                  </label>
+               </div>
             </div>
          </header>
       </>

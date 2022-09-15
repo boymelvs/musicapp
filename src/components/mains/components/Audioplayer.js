@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Playercontrols from "./Playercontrols";
 
-const Audioplayer = ({ songs, index, setIndex }) => {
+const Audioplayer = ({ songs, index, setIndex, music, setMusic }) => {
    const audioPlayer = useRef();
    const [songTimer, setSongTimer] = useState({ currentTime: 0, duration: 0 });
    const [progressBar, setProgressBar] = useState(0);
-   const [music, setMusic] = useState({
-      isPlaying: false,
-      length: songs.length,
-   });
 
    useEffect(() => {
       music.isPlaying ? audioPlayer.current.play() : audioPlayer.current.pause();

@@ -25,6 +25,7 @@
          width: 100%;
          background: $whisper;
          transition: all 200ms ease-in-out;
+         position: relative;
 
          &:hover {
             transform: translateY(-3%);
@@ -44,6 +45,18 @@
 
          @media (min-width: 992px) {
             width: 250px;
+         }
+
+         & .heart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            z-index: 99;
+
+            &:hover {
+               transform: scale(1.05);
+            }
          }
 
          & .cardSongImg {

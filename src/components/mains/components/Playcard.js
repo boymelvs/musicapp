@@ -1,4 +1,5 @@
 import React from "react";
+import heart from "../../../assets/images/fave/heart.svg";
 
 const Playcard = ({ song }) => {
    return (
@@ -17,9 +18,7 @@ const Playcard = ({ song }) => {
                </div>
 
                <label htmlFor="dotCheckbox" className="cardPlayDot">
-                  <span id="dot1" className="dot"></span>
-                  <span id="dot2" className="dot"></span>
-                  <span id="dot3" className="dot"></span>
+                  <img src={heart} alt="heart" className="heart" />
                </label>
 
                <div className="addFavorite">

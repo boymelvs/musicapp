@@ -22,7 +22,7 @@ header {
       }
 
       & img {
-         width: 100%;
+         width: 60px;
       }
    }
 
@@ -44,6 +44,8 @@ header {
       & .menuItem {
          position: relative;
          cursor: pointer;
+         text-decoration: none;
+         color: $whisper;
 
          &::before {
             content: "";
@@ -76,8 +78,12 @@ header {
       gap: 10px;
       position: relative;
 
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
          gap: 30px;
+      }
+
+      @media (min-width: 992px) {
+         gap: 40px;
       }
 
       & .searchForm {
@@ -94,10 +100,21 @@ header {
       }
 
       & .loginSignup {
-         @include flexBox(row, center, center, 20px);
+         @include flexBox(row, center, center, 10px);
          color: $whisper;
 
-         & span {
+         @media (min-width: 768px) {
+            gap: 30px;
+         }
+
+         @media (min-width: 992px) {
+            gap: 40px;
+         }
+
+         & .login,
+         & .signup {
+            text-decoration: none;
+            color: $whisper;
             position: relative;
             cursor: pointer;
 
@@ -114,6 +131,12 @@ header {
             }
 
             &:hover::before {
+               transform: scale(1, 1);
+               transform-origin: left;
+            }
+
+            &.active::before,
+            &.active-link::before {
                transform: scale(1, 1);
                transform-origin: left;
             }
@@ -149,6 +172,8 @@ header {
             & .logout {
                padding: 20px 50px;
                font-weight: $font-weight-700;
+               text-decoration: none;
+               color: $mariner;
             }
 
             & .viewProfile,

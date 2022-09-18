@@ -62,6 +62,14 @@ const SongData = [
       artistName: "Eraserheads",
       albumImg: "https://i.scdn.co/image/ab67616d0000b27383a474e86be1eebb17df6726",
    },
+
+   {
+      id: "6SHSvo6OGgpneKfsxFGhhkgf",
+      title: "Ligaya",
+      track: "https://p.scdn.co/mp3-preview/e0530056a53168224d01bafbda761431ccf37ffc?cid=8d9358cede0f4d958fce2896dba9b05f",
+      artistName: "Eraserheads",
+      albumImg: "https://i.scdn.co/image/ab67616d0000b27383a474e86be1eebb17df6726",
+   },
 ];
 
 export default SongData;

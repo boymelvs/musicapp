@@ -7,3 +7,12 @@
    max-width: 1440px;
    background: $hawkes-blue;
 }
+
+.loadingContainer {
+   @include flexBox(column, center, center, 20px);
+   min-height: 100vh;
+
+   & .loadingText {
+      font-size: 20px;
+   }
+}

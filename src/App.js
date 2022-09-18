@@ -1,33 +1,52 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Headers from "./components/headers/Headers";
 import Main from "./components/mains/Main";
 import sampleSongs from "./assets/songs/SongData";
-import Audioplayer from "./components/mains/components/Audioplayer";
+import loadingImg from "./assets/images/fave/loading.svg";
+import Footers from "./components/footers/Footers";
 axios.defaults.baseURL = "http://localhost:8000";
 
 function App() {
-   const [songs, setSongs] = useState(sampleSongs);
+   let navigate = useNavigate();
+   const [songs, setSongs] = useState([]);
+   const [allTracks, setAllTracks] = useState(sampleSongs);
+   const [loading, setLoading] = useState(false);
    const [index, setIndex] = useState(0);
    const [music, setMusic] = useState({
       isPlaying: false,
-      length: songs.length,
+      isLength: songs.length,
    });
 
-   const playFavorite = (index) => {
-      setIndex(index);
+   const datas = localStorage.getItem("logInfo");
+   const logInfo = datas ? JSON.parse(datas) : {};
+   const [isAdmin, setIsAdmin] = useState(logInfo);
+
+   useEffect(() => {
+      const logInfo = JSON.stringify(isAdmin);
+      localStorage.setItem("logInfo", logInfo);
+      startSearch();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [isAdmin]);
+
+   const playSearch = (index) => {
       setMusic({ ...music, isPlaying: true });
+      setIndex(index);
    };
 
-   const startSearch = (value) => {
+   const startSearch = (value = "Philippine Top Hits") => {
       const data = { search: value };
+      setLoading(true);
 
       axios
          .post("/search", data)
          .then((res) => {
-            console.log(res);
+            navigate("/");
             setSongs(res.data);
+            // console.log(res.data);
+            setLoading(false);
+            setMusic({ ...music, isLength: res.data.length });
          })
          .catch((err) => {
             console.log(err);
@@ -36,9 +55,29 @@ function App() {
 
    return (
       <div className="container">
-         <Headers startSearch={startSearch} />
-         <Main songs={songs} index={index} playFavorite={playFavorite} music={music} />
-         <Audioplayer songs={songs} index={index} setIndex={setIndex} music={music} setMusic={setMusic} />
+         <Headers startSearch={startSearch} playSearch={playSearch} music={music} setMusic={setMusic} isAdmin={isAdmin} />
+
+         {loading ? (
+            <div className="loadingContainer">
+               <img src={loadingImg} alt="" />
+               <div className="loadingText">Loading...</div>
+            </div>
+         ) : (
+            <Main
+               songs={songs}
+               index={index}
+               setIndex={setIndex}
+               playSearch={playSearch}
+               music={music}
+               setMusic={setMusic}
+               allTracks={allTracks}
+               setAllTracks={setAllTracks}
+               isAdmin={isAdmin}
+               setIsAdmin={setIsAdmin}
+            />
+         )}
+
+         <Footers />
       </div>
    );
 }

@@ -1,0 +1,13 @@
+footer {
+   @include flexBox(row, center, center, 20px);
+   background: $mariner;
+   height: 70px;
+   width: 100%;
+   color: $whisper;
+   font-size: 14px;
+
+   & a {
+      text-decoration: none;
+      color: $whisper;
+   }
+}

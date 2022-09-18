@@ -5,12 +5,14 @@
 
    @media (min-width: 992px) {
       flex-direction: row;
-      padding: 20px 0;
+      // padding: 10px 0;
    }
 }
 
 /* Playcard */
 @import "../sections/playcard";
+
+@import "../sections/search";
 
 /* Favorite Song */
 @import "../sections/favesongs";

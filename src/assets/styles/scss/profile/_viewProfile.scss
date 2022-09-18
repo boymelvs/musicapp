@@ -1,0 +1,131 @@
+.profileContainer {
+   @include flexBox(column, center, center, 0);
+   padding: 20px 10px;
+   width: 100%;
+
+   @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+   }
+
+   & .profile {
+      @include flexBox(column, center, center, 10px);
+      padding: 40px;
+
+      & .profileCard {
+         @include flexBox(column, center, center, 10px);
+         padding: 40px 30px 30px 30px;
+         border-radius: 10px;
+         background: $whisper;
+         border: 1px solid $mariner;
+         position: relative;
+
+         & .profPic {
+            width: 200px;
+            overflow: hidden;
+            border-radius: 20px;
+
+            & img {
+               width: 100%;
+            }
+         }
+
+         & .profInfo {
+            & .name {
+               font-size: 20px;
+               color: $mariner;
+               font-weight: $font-weight-700;
+               text-align: center;
+
+               & .edit {
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  text-decoration: none;
+                  font-size: 14px;
+                  color: $mariner;
+
+                  &::before {
+                     content: "";
+                     position: absolute;
+                     bottom: -3px;
+                     left: 0;
+                     width: 100%;
+                     border-bottom: 1px solid $mariner;
+                     transform: scale(0, 1);
+                     transform-origin: right;
+                     transition: transform 300ms ease-in-out;
+                  }
+
+                  &:hover::before {
+                     transform: scale(1, 1);
+                     transform-origin: left;
+                  }
+               }
+            }
+
+            & .email {
+               font-size: 14px;
+            }
+         }
+      }
+   }
+
+   & .favoritesContainer {
+      width: 100%;
+
+      & h2 {
+         text-align: center;
+         color: $mariner;
+      }
+
+      & .favorites {
+         @include flexBox(column, center, center, 10px);
+         width: 100%;
+         padding: 20px 10px;
+
+         @media (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+         }
+
+         & .cardSong {
+            @include flexBox(row, center, flex-start, 10px);
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            background: $whisper;
+            transition: all 200ms ease-in-out;
+            position: relative;
+
+            @media (min-width: 768px) {
+               width: 250px;
+            }
+
+            & .cardSongImg {
+               width: 100px;
+               height: 100px;
+               border-radius: 5px;
+               overflow: hidden;
+               position: relative;
+               transition: all 200ms ease-in-out;
+
+               & .songImg {
+                  width: 100%;
+               }
+            }
+
+            & .titleArtist {
+               & .cardSongTitle {
+                  font-weight: $font-weight-700;
+               }
+
+               & .cardSongArtist {
+                  font-size: 14px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,27 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import playBtn from "../../../assets/images/player/plays.svg";
 import paused from "../../../assets/images/player/paused.svg";
-import DeleteModal from "./playlist/DeleteModal";
+import heart from "../../../assets/images/fave/heart.svg";
+import addHeart from "../../../assets/images/fave/heart1.png";
 
-const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => {
-   const [deleteSong, setDeleteSong] = useState({});
-   const [showModal, setShowModal] = useState(false);
+const SearchSong = ({ songs, index, playSearch, music, addToFavorites, allTracks, isAdmin }) => {
+   const [track, setTracks] = useState({});
+   const [isAdded, setIsAdded] = useState(false);
 
    const onSongClick = (idx) => {
-      playFavorite(idx);
+      playSearch(idx);
    };
 
-   const onDelete = (song) => {
-      setDeleteSong(song);
-      setShowModal(true);
+   const addTo = (song) => {
+      addToFavorites(song);
+      setTracks(song);
    };
 
    const faveSongsRender = songs.map((song, idx) => {
       return (
-         <div className="cardSong" key={song.id}>
-            <div className="close" onClick={() => onDelete(song)}>
-               X
-            </div>
+         <div className="cardSong" key={song.id || idx}>
+            {isAdmin.id && <img src={isAdded ? addHeart : heart} alt="favorites" className="heart" onClick={() => addTo(song)} />}
             <div className="cardSongImg" onClick={() => onSongClick(idx)}>
                <img src={song.albumImg} alt={song.artistName} className="songImg" />
 
@@ -39,11 +38,10 @@ const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => 
 
    return (
       <div className="songContainer">
-         <h2>Favorites</h2>
+         <h2>Search Results </h2>
          <div className="cardSongContainer">{faveSongsRender}</div>
-         {showModal && <DeleteModal song={deleteSong} onDeleteFavorites={onDeleteFavorites} setShowModal={setShowModal} />}
       </div>
    );
 };
 
-export default Favesongs;
+export default SearchSong;

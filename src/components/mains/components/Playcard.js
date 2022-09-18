@@ -1,7 +1,10 @@
 import React from "react";
-import heart from "../../../assets/images/fave/heart.svg";
 
 const Playcard = ({ song }) => {
+   if (!song) {
+      return;
+   }
+
    return (
       <div className="cardPlayContainer">
          <div className="cardPlay">
@@ -17,9 +20,9 @@ const Playcard = ({ song }) => {
                   <div className="title">{`by ${song.artistName}`}</div>
                </div>
 
-               <label htmlFor="dotCheckbox" className="cardPlayDot">
+               {/* <label htmlFor="dotCheckbox" className="cardPlayDot">
                   <img src={heart} alt="heart" className="heart" />
-               </label>
+               </label> */}
 
                <div className="addFavorite">
                   <label htmlFor="dotCheckbox" className="addFaveLabel">

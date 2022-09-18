@@ -7,7 +7,7 @@ import forward from "../../../assets/images/player/forward.svg";
 const Playerbuttons = ({ music, setMusic, index, setIndex, audioPlayer }) => {
    useEffect(() => {
       const onLastSong = (index) => {
-         if (index < music.length - 1) {
+         if (index < music.isLength - 1) {
             index += 1;
          } else {
             index = 0;
@@ -29,7 +29,7 @@ const Playerbuttons = ({ music, setMusic, index, setIndex, audioPlayer }) => {
          setMusic({ ...music, isPlaying: !music.isPlaying });
       }
 
-      if (name === "next" && index < music.length - 1) {
+      if (name === "next" && index < music.isLength - 1) {
          setIndex(index + 1);
       }
 

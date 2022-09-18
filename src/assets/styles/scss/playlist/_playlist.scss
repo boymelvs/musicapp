@@ -1,0 +1,77 @@
+.newPlaylistContainer {
+   @include flexBox(row, flex-start, center, 0);
+   flex-wrap: wrap;
+   width: 100%;
+   min-height: 100vh;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 99;
+}
+
+.newPlaylist {
+   margin-top: 50px;
+   width: 250px;
+   padding: 20px;
+   border: 1px solid $mariner;
+   border-radius: 5px;
+   background: $whisper;
+   position: relative;
+
+   & .playListForm {
+      @include flexBox(column, center, center, 20px);
+      width: 100%;
+
+      & .playListName {
+         @include flexBox(column, center, center, 10px);
+         width: 100%;
+         font-size: 20px;
+         font-weight: $font-weight-500;
+         color: $mariner;
+
+         & input {
+            border: 1.5px solid $hawkes-blue;
+            border-radius: 5px;
+            outline: none;
+            width: 100%;
+            padding: 10px;
+
+            &:focus {
+               border: 1.5px solid $mariner;
+            }
+         }
+      }
+
+      & .btnContainer {
+         @include flexBox(row, center, center, 20px);
+         width: 100%;
+
+         & .btn {
+            border: 1px solid $mariner;
+            border-radius: 5px;
+            padding: 5px;
+            width: 80px;
+            font-size: 16px;
+
+            &:hover {
+               cursor: pointer;
+               transform: scale(1.01);
+            }
+
+            &:active {
+               transform: scale(0.99);
+            }
+         }
+
+         & .saveBtn {
+            color: $whisper;
+            background: $mariner;
+         }
+
+         & .cancelBtn {
+            background: $whisper;
+            color: $mariner;
+         }
+      }
+   }
+}

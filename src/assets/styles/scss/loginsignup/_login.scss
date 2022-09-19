@@ -1,11 +1,11 @@
 .loginContainer {
-   @include flexBox(row, center, center, 0);
+   @include flexBox(column, center, center, 0);
    width: 100%;
+   padding-top: 60px;
 
    & #loginForm {
       @include flexBox(column, center, center, 20px);
       padding: 30px;
-      margin-top: 30px;
       border-radius: 5px;
       background: $whisper;
       width: 350px;

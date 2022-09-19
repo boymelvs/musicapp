@@ -3,6 +3,7 @@
    bottom: 0;
    width: 100%;
    max-width: 1440px;
+   min-width: 350px;
    background: rgba(0, 0, 0, 0.5);
    z-index: 99;
 
@@ -18,7 +19,6 @@
       & .progressFilled {
          width: 100%;
          background: hsl(47, 100%, 50%);
-         // background: hsl(225, 48%, 46%);
          flex: 0;
          flex-basis: 50%;
          border-top-right-radius: 2px;

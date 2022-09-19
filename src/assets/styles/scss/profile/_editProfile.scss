@@ -17,73 +17,105 @@
       z-index: 0;
    }
 
-   & #editProfileForm {
-      @include flexBox(column, center, center, 20px);
-
-      padding: 30px;
-      width: 350px;
-      margin-top: 30px;
-      border-radius: 5px;
+   & .profile {
+      @include flexBox(column, center, center, 0);
       background: $whisper;
       z-index: 10;
+      border-radius: 5px;
+      margin-top: 30px;
+      position: relative;
 
-      @media (min-width: 768px) {
-         width: 450px;
+      & h2 {
+         text-align: center;
+         color: $mariner;
       }
 
-      & .field {
-         @include flexBox(column, flex-start, center, 0);
-         width: 100%;
+      & .delete {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         padding: 5px 10px;
+         border: none;
+         border-radius: 5px;
+         background: $light-red;
+         color: $whisper;
 
-         & label {
-            display: block;
-            font-weight: $font-weight-500;
-            color: $mariner;
-            font-size: 14px;
+         &:hover {
+            box-shadow: 0 0 2px $light-red;
+            opacity: 0.9;
+            cursor: pointer;
          }
 
-         & input {
-            border: 1.5px solid $hawkes-blue;
-            border-radius: 5px;
-            outline: none;
-            width: 100%;
-            padding: 10px;
-
-            &:focus {
-               border: 1.5px solid $mariner;
-            }
+         &:active {
+            transform: scale(0.98);
          }
       }
 
-      & .btnContainer {
-         @include flexBox(row, center, center, 20px);
-         width: 100%;
+      & #editProfileForm {
+         @include flexBox(column, center, center, 20px);
+         padding: 30px;
+         width: 350px;
+         border-radius: 5px;
+         background: $hawkes-blue;
 
-         & .btn {
-            border: 1px solid $mariner;
-            border-radius: 5px;
-            padding: 10px;
+         @media (min-width: 768px) {
+            width: 450px;
+         }
+
+         & .field {
+            @include flexBox(column, flex-start, center, 0);
             width: 100%;
-            font-size: 14px;
 
-            &:hover {
-               cursor: pointer;
-               transform: scale(1.01);
+            & label {
+               display: block;
+               font-weight: $font-weight-600;
+               color: $mariner;
+               font-size: 14px;
             }
 
-            &:active {
-               transform: scale(0.99);
+            & input {
+               border: 1.5px solid $hawkes-blue;
+               border-radius: 5px;
+               outline: none;
+               width: 100%;
+               padding: 10px;
+
+               &:focus {
+                  border: 1.5px solid $mariner;
+               }
             }
          }
 
-         & .cancelBtn {
-            color: $whisper;
-            background: $mariner;
-         }
+         & .btnContainer {
+            @include flexBox(row, center, center, 20px);
+            width: 100%;
 
-         & .deleteBtn {
-            background: $whisper;
-            color: $mariner;
+            & .btn {
+               border: 1px solid $mariner;
+               border-radius: 5px;
+               padding: 10px;
+               width: 100%;
+               font-size: 14px;
+
+               &:hover {
+                  cursor: pointer;
+                  transform: scale(1.01);
+               }
+
+               &:active {
+                  transform: scale(0.99);
+               }
+            }
+
+            & .cancelBtn {
+               color: $whisper;
+               background: $mariner;
+            }
+
+            & .deleteBtn {
+               background: $whisper;
+               color: $mariner;
+            }
          }
       }
    }

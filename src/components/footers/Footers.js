@@ -1,13 +1,21 @@
 import React from "react";
+import socialMedia from "../../assets/images/social-media/ImgMedia";
 
 const Footers = () => {
    return (
-      <footer>
-         <div>
-            Coded by
-            <a href="https://github.com/boymelvs" target="_blank" rel="noreferrer noopener">
-               <span> boymelvs</span>
-            </a>
+      <footer className="myFooters">
+         <div className="codedBy">
+            <img src={socialMedia.copyright} alt="copyfight" />
+            <div>
+               <span>2022 Code by</span>
+               <a href="https://github.com/boymelvs" target="_blank" rel="noreferrer noopener">
+                  <span> boymelvs</span>
+               </a>
+            </div>
+         </div>
+
+         <div className="termsPrivacyContainer">
+            <div className="policy terms">Terms & Conditions</div> |<div className="policy privacy">Privacy</div>
          </div>
       </footer>
    );

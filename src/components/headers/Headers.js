@@ -10,10 +10,12 @@ const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
 
    const onNavItemClick = () => {
       setMusic({ ...music, isPlaying: false });
+      profileCheckboxRef.current.checked = false;
    };
 
    const onLogout = () => {
       localStorage.removeItem("logInfo");
+      localStorage.removeItem("saveTracks");
       profileCheckboxRef.current.checked = false;
    };
 
@@ -30,6 +32,10 @@ const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
 
             <Link to="/playlist" className={`menuItem favoriteSong ${location === "/playlist" && "active"}`} name="playlist" onClick={onNavItemClick}>
                Play Favorites
+            </Link>
+
+            <Link to="/about" className={`menuItem favoriteSong ${location === "/about" && "active"}`} name="about" onClick={onNavItemClick}>
+               About
             </Link>
          </nav>
 

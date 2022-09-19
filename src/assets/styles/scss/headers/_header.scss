@@ -4,6 +4,7 @@ header {
    background: hsl(225, 48%, 46%);
    padding: 10px 20px 40px 20px;
    max-width: 1440px;
+   min-width: 350px;
    position: relative;
 
    @media (min-width: 768px) {
@@ -102,6 +103,10 @@ header {
       & .loginSignup {
          @include flexBox(row, center, center, 10px);
          color: $whisper;
+
+         @media (max-width: 400px) {
+            flex-direction: column;
+         }
 
          @media (min-width: 768px) {
             gap: 30px;

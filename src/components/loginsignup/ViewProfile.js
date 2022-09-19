@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import avatar from "../../assets/images/profile/avatar.png";
 import Notfound from "../modal/Notfound";
 import EditProfile from "./EditProfile";
 
-const ViewProfile = ({ isAdmin, songs }) => {
+const ViewProfile = ({ songs, setIsAdmin }) => {
    let faveSongsRender;
    const [showEdit, setShowEdit] = useState(false);
-   const [user, setUser] = useState(isAdmin);
+   const [user, setUser] = useState({});
+
+   useEffect(() => {
+      const datas = localStorage.getItem("logInfo");
+      const logInfo = datas ? JSON.parse(datas) : {};
+      setUser(logInfo);
+   }, []);
 
    faveSongsRender = songs.map((song, idx) => {
       return (
@@ -32,6 +38,10 @@ const ViewProfile = ({ isAdmin, songs }) => {
       setShowEdit(true);
    };
 
+   const capitalize = (str) => {
+      return str && str.charAt(0).toUpperCase() + str.slice(1);
+   };
+
    return (
       <div className="profileContainer">
          <div className="profile">
@@ -42,7 +52,7 @@ const ViewProfile = ({ isAdmin, songs }) => {
 
                <div className="profInfo">
                   <div className="name">
-                     {`${user.first_name} ${user.last_name}`}
+                     {`${capitalize(user.first_name)} ${capitalize(user.last_name)}`}
 
                      <div className="edit" onClick={onEdit}>
                         Edit
@@ -58,7 +68,7 @@ const ViewProfile = ({ isAdmin, songs }) => {
             <h2>Your Favorites</h2>
             <div className="favorites">{faveSongsRender}</div>
          </div>
-         {showEdit && <EditProfile user={user} setUser={setUser} setShowEdit={setShowEdit} />}
+         {showEdit && <EditProfile user={user} setUser={setUser} setShowEdit={setShowEdit} setIsAdmin={setIsAdmin} />}
       </div>
    );
 };

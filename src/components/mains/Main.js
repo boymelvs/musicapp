@@ -8,6 +8,7 @@ import Login from "../loginsignup/Login";
 import Signup from "../loginsignup/Signup";
 import Notfound from "../modal/Notfound";
 import ViewProfile from "../loginsignup/ViewProfile";
+import About from "../about/About";
 
 const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, setAllTracks, isAdmin, setIsAdmin }) => {
    const [faveIndex, setFaveIndex] = useState(0);
@@ -26,16 +27,6 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
       setFaveIndex(idx);
    };
 
-   const addToFavorites = (track) => {
-      const isAdded = allTracks.includes(track);
-
-      if (isAdded) {
-         return;
-      }
-
-      setAllTracks([...allTracks, track]);
-   };
-
    const onDeleteFavorites = (songToDelete) => {
       const newAlltracks = [...allTracks];
 
@@ -49,6 +40,11 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
       <main className="myMain">
          <section className="playerSection">
             <Routes>
+               <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
+               <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
+               <Route path="/profile" element={<ViewProfile songs={allTracks} setIsAdmin={setIsAdmin} />} />
+               <Route path="/about" element={<About />} />
+
                <Route
                   path="/"
                   element={
@@ -57,16 +53,21 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
                      ) : (
                         <>
                            <Playcard song={songs[index]} />
-                           <SearchSong songs={songs} index={index} playSearch={playSearch} music={music} addToFavorites={addToFavorites} allTracks={allTracks} isAdmin={isAdmin} />
+                           <SearchSong
+                              songs={songs}
+                              index={index}
+                              playSearch={playSearch}
+                              music={music}
+                              setAllTracks={setAllTracks}
+                              allTracks={allTracks}
+                              isAdmin={isAdmin}
+                              onDeleteFavorites={onDeleteFavorites}
+                           />
                            <Audioplayer songs={songs} index={index} setIndex={setIndex} music={music} setMusic={setMusic} />
                         </>
                      )
                   }
                />
-
-               <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
-               <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
-               <Route path="/profile" element={<ViewProfile isAdmin={isAdmin} setIsAdmin={setIsAdmin} songs={allTracks} />} />
 
                <Route
                   path="/playlist"

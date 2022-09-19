@@ -96,6 +96,7 @@
             @include flexBox(row, center, flex-start, 10px);
             padding: 10px;
             border-radius: 5px;
+            max-width: 320px;
             width: 100%;
             background: $whisper;
             transition: all 200ms ease-in-out;

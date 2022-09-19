@@ -36,12 +36,13 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
       setAllTracks([...allTracks, track]);
    };
 
-   const onDeleteFavorites = (index) => {
+   const onDeleteFavorites = (songToDelete) => {
       const newAlltracks = [...allTracks];
 
       setfaveMusic({ ...faveMusic, isPlaying: false });
-      newAlltracks.splice(index, 1);
+      newAlltracks.splice(songToDelete.song, 1);
       setAllTracks(newAlltracks);
+      setFaveIndex(0);
    };
 
    return (
@@ -80,7 +81,6 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
                               faveMusic={faveMusic}
                               onDeleteFavorites={onDeleteFavorites}
                               setfaveMusic={setfaveMusic}
-                              isAdmin={isAdmin}
                            />
                         ) : (
                            <Login setIsAdmin={setIsAdmin} />

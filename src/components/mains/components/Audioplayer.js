@@ -23,7 +23,7 @@ const Audioplayer = ({ songs, index, setIndex, music, setMusic }) => {
 
    return (
       <div className="player">
-         <audio src={songs ? songs[index].track : ""} ref={audioPlayer} className="playerAudio"></audio>
+         <audio src={songs[index].track} ref={audioPlayer} className="playerAudio"></audio>
 
          <div className="progress">
             <div className="progressFilled" style={{ flexBasis: `${progressBar}%` }}></div>

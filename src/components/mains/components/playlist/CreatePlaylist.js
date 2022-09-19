@@ -4,7 +4,7 @@ import Notfound from "../../../modal/Notfound";
 import Playcard from "../Playcard";
 import Favesongs from "../Favesongs";
 
-const CreatePlaylist = ({ allTracks, faveIndex, setFaveIndex, playFavorite, faveMusic, onDeleteFavorites, setfaveMusic, isAdmin }) => {
+const CreatePlaylist = ({ allTracks, faveIndex, setFaveIndex, playFavorite, faveMusic, onDeleteFavorites, setfaveMusic }) => {
    if (allTracks.length === 0) {
       return <Notfound value={"Saved Favorites"} />;
    }

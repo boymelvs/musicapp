@@ -11,15 +11,15 @@ const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => 
       playFavorite(idx);
    };
 
-   const onDelete = (song) => {
-      setDeleteSong(song);
+   const onDelete = (song, idx) => {
+      setDeleteSong({...deleteSong, song, idx});
       setShowModal(true);
    };
 
    const faveSongsRender = songs.map((song, idx) => {
       return (
          <div className="cardSong" key={song.id}>
-            <div className="close" onClick={() => onDelete(song)}>
+            <div className="close" onClick={() => onDelete(song, idx)}>
                X
             </div>
             <div className="cardSongImg" onClick={() => onSongClick(idx)}>

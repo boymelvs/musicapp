@@ -6,12 +6,22 @@
    position: absolute;
    top: 0;
    left: 0;
-   z-index: 99;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsla(0, 0%, 0%, 0.5);
+      z-index: 0;
+   }
 }
 
 .modal {
    margin-top: -200px;
-   width: 320px;
+   width: 350px;
    padding: 35px;
    border: 1px solid $mariner;
    border-radius: 5px;
@@ -48,7 +58,7 @@
          & .btn {
             border: 1px solid $mariner;
             border-radius: 5px;
-            padding: 5px;
+            padding: 10px;
             width: 100%;
             font-size: 14px;
 

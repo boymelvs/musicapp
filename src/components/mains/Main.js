@@ -65,7 +65,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
 
                <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
                <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
-               <Route path="/profile" element={<ViewProfile isAdmin={isAdmin} songs={allTracks} />} />
+               <Route path="/profile" element={<ViewProfile isAdmin={isAdmin} setIsAdmin={setIsAdmin} songs={allTracks} />} />
 
                <Route
                   path="/playlist"

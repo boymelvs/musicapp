@@ -2,6 +2,7 @@
    @include flexBox(column, center, center, 0);
    padding: 20px 10px;
    width: 100%;
+   position: relative;
 
    @media (min-width: 768px) {
       flex-direction: row;
@@ -44,6 +45,7 @@
                   text-decoration: none;
                   font-size: 14px;
                   color: $mariner;
+                  cursor: pointer;
 
                   &::before {
                      content: "";

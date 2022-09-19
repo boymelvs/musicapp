@@ -1,33 +1,46 @@
-.newPlaylistContainer {
+.editProfileContainer {
    @include flexBox(row, flex-start, center, 0);
-   flex-wrap: wrap;
    width: 100%;
    min-height: 100vh;
    position: absolute;
    top: 0;
    left: 0;
-   z-index: 99;
-}
 
-.newPlaylist {
-   margin-top: 50px;
-   width: 250px;
-   padding: 20px;
-   border: 1px solid $mariner;
-   border-radius: 5px;
-   background: $whisper;
-   position: relative;
-
-   & .playListForm {
-      @include flexBox(column, center, center, 20px);
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background: hsla(0, 0%, 0%, 0.5);
+      z-index: 0;
+   }
 
-      & .playListName {
-         @include flexBox(column, center, center, 10px);
+   & #editProfileForm {
+      @include flexBox(column, center, center, 20px);
+
+      padding: 30px;
+      width: 350px;
+      margin-top: 30px;
+      border-radius: 5px;
+      background: $whisper;
+      z-index: 10;
+
+      @media (min-width: 768px) {
+         width: 450px;
+      }
+
+      & .field {
+         @include flexBox(column, flex-start, center, 0);
          width: 100%;
-         font-size: 20px;
-         font-weight: $font-weight-500;
-         color: $mariner;
+
+         & label {
+            display: block;
+            font-weight: $font-weight-500;
+            color: $mariner;
+            font-size: 14px;
+         }
 
          & input {
             border: 1.5px solid $hawkes-blue;
@@ -49,9 +62,9 @@
          & .btn {
             border: 1px solid $mariner;
             border-radius: 5px;
-            padding: 5px;
-            width: 80px;
-            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
 
             &:hover {
                cursor: pointer;
@@ -63,12 +76,12 @@
             }
          }
 
-         & .saveBtn {
+         & .cancelBtn {
             color: $whisper;
             background: $mariner;
          }
 
-         & .cancelBtn {
+         & .deleteBtn {
             background: $whisper;
             color: $mariner;
          }

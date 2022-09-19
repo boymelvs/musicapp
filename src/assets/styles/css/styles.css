@@ -900,173 +900,6 @@ footer a {
   padding: 20px;
 }
 
-.newPlaylistContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-
-.newPlaylist {
-  margin-top: 50px;
-  width: 250px;
-  padding: 20px;
-  border: 1px solid hsl(225deg, 48%, 46%);
-  border-radius: 5px;
-  background: hsl(0deg, 0%, 100%);
-  position: relative;
-}
-.newPlaylist .playListForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-.newPlaylist .playListForm .playListName {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  font-size: 20px;
-  font-weight: 500;
-  color: hsl(225deg, 48%, 46%);
-}
-.newPlaylist .playListForm .playListName input {
-  border: 1.5px solid hsl(220deg, 56%, 87%);
-  border-radius: 5px;
-  outline: none;
-  width: 100%;
-  padding: 10px;
-}
-.newPlaylist .playListForm .playListName input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
-}
-.newPlaylist .playListForm .btnContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-}
-.newPlaylist .playListForm .btnContainer .btn {
-  border: 1px solid hsl(225deg, 48%, 46%);
-  border-radius: 5px;
-  padding: 5px;
-  width: 80px;
-  font-size: 16px;
-}
-.newPlaylist .playListForm .btnContainer .btn:hover {
-  cursor: pointer;
-  transform: scale(1.01);
-}
-.newPlaylist .playListForm .btnContainer .btn:active {
-  transform: scale(0.99);
-}
-.newPlaylist .playListForm .btnContainer .saveBtn {
-  color: hsl(0deg, 0%, 100%);
-  background: hsl(225deg, 48%, 46%);
-}
-.newPlaylist .playListForm .btnContainer .cancelBtn {
-  background: hsl(0deg, 0%, 100%);
-  color: hsl(225deg, 48%, 46%);
-}
-
-.cardCollectionContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 10px;
-  position: relative;
-}
-@media (min-width: 768px) {
-  .cardCollectionContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-.cardCollectionContainer .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 15;
-  font-weight: 600;
-}
-.cardCollectionContainer .close:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-.cardCollectionContainer .cardSong {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  width: 100%;
-  background: hsl(0deg, 0%, 100%);
-  transition: all 200ms ease-in-out;
-  position: relative;
-}
-.cardCollectionContainer .cardSong:hover {
-  transform: translateY(-3%);
-  cursor: pointer;
-}
-.cardCollectionContainer .cardSong:hover .playBtn {
-  width: 30px;
-  position: absolute;
-  top: 30%;
-  left: 35%;
-}
-@media (min-width: 768px) {
-  .cardCollectionContainer .cardSong {
-    width: 250px;
-  }
-}
-.cardCollectionContainer .cardSong .heart {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  z-index: 10;
-}
-.cardCollectionContainer .cardSong .heart:hover {
-  transform: scale(1.05);
-}
-.cardCollectionContainer .cardSong .cardSongImg {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  transition: all 200ms ease-in-out;
-}
-.cardCollectionContainer .cardSong .cardSongImg .songImg {
-  width: 100%;
-}
-.cardCollectionContainer .cardSong .titleArtist .cardSongTitle {
-  font-weight: 700;
-}
-.cardCollectionContainer .cardSong .titleArtist .cardSongArtist {
-  font-size: 14px;
-}
-
 .modalContainer {
   display: flex;
   flex-direction: row;
@@ -1079,12 +912,21 @@ footer a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+}
+.modalContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 0;
 }
 
 .modal {
   margin-top: -200px;
-  width: 320px;
+  width: 350px;
   padding: 35px;
   border: 1px solid hsl(225deg, 48%, 46%);
   border-radius: 5px;
@@ -1130,7 +972,7 @@ footer a {
 .modal .modalForm .btnContainer .btn {
   border: 1px solid hsl(225deg, 48%, 46%);
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   font-size: 14px;
 }
@@ -1172,6 +1014,7 @@ footer a {
   gap: 0;
   padding: 20px 10px;
   width: 100%;
+  position: relative;
 }
 @media (min-width: 768px) {
   .profileContainer {
@@ -1220,6 +1063,7 @@ footer a {
   text-decoration: none;
   font-size: 14px;
   color: hsl(225deg, 48%, 46%);
+  cursor: pointer;
 }
 .profileContainer .profile .profileCard .profInfo .name .edit::before {
   content: "";
@@ -1296,6 +1140,101 @@ footer a {
 }
 .profileContainer .favoritesContainer .favorites .cardSong .titleArtist .cardSongArtist {
   font-size: 14px;
+}
+
+.editProfileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.editProfileContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 0;
+}
+.editProfileContainer #editProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  width: 350px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background: hsl(0deg, 0%, 100%);
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .editProfileContainer #editProfileForm {
+    width: 450px;
+  }
+}
+.editProfileContainer #editProfileForm .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.editProfileContainer #editProfileForm .field label {
+  display: block;
+  font-weight: 500;
+  color: hsl(225deg, 48%, 46%);
+  font-size: 14px;
+}
+.editProfileContainer #editProfileForm .field input {
+  border: 1.5px solid hsl(220deg, 56%, 87%);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+}
+.editProfileContainer #editProfileForm .field input:focus {
+  border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.editProfileContainer #editProfileForm .btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer #editProfileForm .btnContainer .btn {
+  border: 1px solid hsl(225deg, 48%, 46%);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+.editProfileContainer #editProfileForm .btnContainer .btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.editProfileContainer #editProfileForm .btnContainer .btn:active {
+  transform: scale(0.99);
+}
+.editProfileContainer #editProfileForm .btnContainer .cancelBtn {
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(225deg, 48%, 46%);
+}
+.editProfileContainer #editProfileForm .btnContainer .deleteBtn {
+  background: hsl(0deg, 0%, 100%);
+  color: hsl(225deg, 48%, 46%);
 }
 
 *,

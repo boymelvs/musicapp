@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Headers from "./components/headers/Headers";
 import Main from "./components/mains/Main";
-import sampleSongs from "./assets/songs/SongData";
+// import sampleSongs from "./assets/songs/SongData";
 import loadingImg from "./assets/images/fave/loading.svg";
 import Footers from "./components/footers/Footers";
 axios.defaults.baseURL = "http://localhost:8000";
@@ -11,7 +11,7 @@ axios.defaults.baseURL = "http://localhost:8000";
 function App() {
    let navigate = useNavigate();
    const [songs, setSongs] = useState([]);
-   const [allTracks, setAllTracks] = useState(sampleSongs);
+   const [allTracks, setAllTracks] = useState([]);
    const [loading, setLoading] = useState(false);
    const [index, setIndex] = useState(0);
    const [music, setMusic] = useState({

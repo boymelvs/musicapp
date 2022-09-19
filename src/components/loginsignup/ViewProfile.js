@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import avatar from "../../assets/images/profile/avatar.png";
-import { Link } from "react-router-dom";
+import Notfound from "../modal/Notfound";
+import EditProfile from "./EditProfile";
 
 const ViewProfile = ({ isAdmin, songs }) => {
    let faveSongsRender;
+   const [showEdit, setShowEdit] = useState(false);
+   const [user, setUser] = useState(isAdmin);
 
    faveSongsRender = songs.map((song, idx) => {
       return (
@@ -22,27 +25,31 @@ const ViewProfile = ({ isAdmin, songs }) => {
    });
 
    if (!songs[0]) {
-      faveSongsRender = "No Records";
+      faveSongsRender = <Notfound value="Records" />;
    }
+
+   const onEdit = () => {
+      setShowEdit(true);
+   };
 
    return (
       <div className="profileContainer">
          <div className="profile">
             <div className="profileCard">
                <div className="profPic">
-                  <img src={avatar} alt={isAdmin.first_name} />
+                  <img src={avatar} alt={user.first_name} />
                </div>
 
                <div className="profInfo">
                   <div className="name">
-                     {`${isAdmin.first_name} ${isAdmin.last_name}`}
+                     {`${user.first_name} ${user.last_name}`}
 
-                     <Link to="/edit" className="edit">
+                     <div className="edit" onClick={onEdit}>
                         Edit
-                     </Link>
+                     </div>
                   </div>
 
-                  <div className="email">{isAdmin.email}</div>
+                  <div className="email">{user.email}</div>
                </div>
             </div>
          </div>
@@ -51,6 +58,7 @@ const ViewProfile = ({ isAdmin, songs }) => {
             <h2>Your Favorites</h2>
             <div className="favorites">{faveSongsRender}</div>
          </div>
+         {showEdit && <EditProfile user={user} setUser={setUser} setShowEdit={setShowEdit} />}
       </div>
    );
 };

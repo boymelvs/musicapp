@@ -3,16 +3,14 @@ import avatar from "../../assets/images/profile/avatar.png";
 import Notfound from "../modal/Notfound";
 import EditProfile from "./EditProfile";
 
-const ViewProfile = ({ songs, setIsAdmin }) => {
+const ViewProfile = ({ songs, isAdmin, setIsAdmin }) => {
    let faveSongsRender;
    const [showEdit, setShowEdit] = useState(false);
-   const [user, setUser] = useState({});
+   const [user, setUser] = useState(isAdmin);
 
    useEffect(() => {
-      const datas = localStorage.getItem("logInfo");
-      const logInfo = datas ? JSON.parse(datas) : {};
-      setUser(logInfo);
-   }, []);
+      setUser(isAdmin);
+   }, [isAdmin]);
 
    faveSongsRender = songs.map((song, idx) => {
       return (
@@ -47,7 +45,7 @@ const ViewProfile = ({ songs, setIsAdmin }) => {
          <div className="profile">
             <div className="profileCard">
                <div className="profPic">
-                  <img src={avatar} alt={user.first_name} />
+                  <img src={user.image || avatar} alt={user.first_name} />
                </div>
 
                <div className="profInfo">

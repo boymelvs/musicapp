@@ -157,6 +157,7 @@ header .profileSearchContainer .loginSignup .login.active::before, header .profi
 header .profileSearchContainer .avatarContainer .avatar {
   border-radius: 50%;
   width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 header .profileSearchContainer .avatarContainer #profileCheckbox {
@@ -1106,7 +1107,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
   background: hsl(0deg, 0%, 100%);
@@ -1115,6 +1116,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .profileContainer .profile .profileCard .profPic {
   width: 200px;
+  height: 200px;
   overflow: hidden;
   border-radius: 20px;
 }
@@ -1241,7 +1243,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 5px;
   background: hsl(0deg, 0%, 100%);
   z-index: 10;
   border-radius: 5px;
@@ -1286,7 +1288,23 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
     width: 450px;
   }
 }
-.editProfileContainer .profile #editProfileForm .field {
+.editProfileContainer .profile #editProfileForm .infoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1294,21 +1312,64 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 0;
   width: 100%;
 }
-.editProfileContainer .profile #editProfileForm .field label {
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field label {
   display: block;
   font-weight: 600;
   color: hsl(225deg, 48%, 46%);
   font-size: 14px;
 }
-.editProfileContainer .profile #editProfileForm .field input {
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input {
   border: 1.5px solid hsl(220deg, 56%, 87%);
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
 }
-.editProfileContainer .profile #editProfileForm .field input:focus {
+.editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input:focus {
   border: 1.5px solid hsl(225deg, 48%, 46%);
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 200px;
+  height: 135px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 300ms ease-in-out;
+  background: hsla(0deg, 0%, 0%, 0.3);
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer:hover::before {
+  opacity: 1;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer:hover > span {
+  opacity: 1;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer .profPic {
+  width: 100%;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer #imageInput {
+  display: none;
+}
+.editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer span {
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
 }
 .editProfileContainer .profile #editProfileForm .btnContainer {
   display: flex;

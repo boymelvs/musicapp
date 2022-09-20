@@ -14,7 +14,7 @@
       padding: 40px;
 
       & .profileCard {
-         @include flexBox(column, center, center, 10px);
+         @include flexBox(column, center, center, 20px);
          padding: 40px 30px 30px 30px;
          border-radius: 10px;
          background: $whisper;
@@ -23,6 +23,7 @@
 
          & .profPic {
             width: 200px;
+            height: 200px;
             overflow: hidden;
             border-radius: 20px;
 

@@ -31,9 +31,14 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
       const newAlltracks = [...allTracks];
 
       setfaveMusic({ ...faveMusic, isPlaying: false });
-      newAlltracks.splice(songToDelete.song, 1);
+      newAlltracks.splice(newAlltracks.indexOf(songToDelete), 1);
       setAllTracks(newAlltracks);
       setFaveIndex(0);
+
+      const saveTracks = JSON.stringify(newAlltracks);
+      localStorage.setItem("saveTracks", saveTracks);
+
+      // delete on db
    };
 
    return (
@@ -42,7 +47,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
             <Routes>
                <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
                <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
-               <Route path="/profile" element={<ViewProfile songs={allTracks} setIsAdmin={setIsAdmin} />} />
+               <Route path="/profile" element={<ViewProfile songs={allTracks} isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
                <Route path="/about" element={<About />} />
 
                <Route

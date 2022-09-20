@@ -18,7 +18,7 @@
    }
 
    & .profile {
-      @include flexBox(column, center, center, 0);
+      @include flexBox(column, center, center, 5px);
       background: $whisper;
       z-index: 10;
       border-radius: 5px;
@@ -62,26 +62,82 @@
             width: 450px;
          }
 
-         & .field {
-            @include flexBox(column, flex-start, center, 0);
+         & .infoContainer {
+            @include flexBox(row, flex-start, space-between, 20px);
             width: 100%;
 
-            & label {
-               display: block;
-               font-weight: $font-weight-600;
-               color: $mariner;
-               font-size: 14px;
+            & .namesContainer {
+               @include flexBox(column, center, center, 20px);
+               width: 100%;
+
+               & .field {
+                  @include flexBox(column, flex-start, center, 0);
+                  width: 100%;
+
+                  & label {
+                     display: block;
+                     font-weight: $font-weight-600;
+                     color: $mariner;
+                     font-size: 14px;
+                  }
+
+                  & input {
+                     border: 1.5px solid $hawkes-blue;
+                     border-radius: 5px;
+                     outline: none;
+                     width: 100%;
+                     padding: 10px;
+
+                     &:focus {
+                        border: 1.5px solid $mariner;
+                     }
+                  }
+               }
             }
 
-            & input {
-               border: 1.5px solid $hawkes-blue;
+            & .profilePicContainer {
+               @include flexBox(column, center, center, 0);
+               width: 200px;
+               height: 135px;
+               position: relative;
                border-radius: 5px;
-               outline: none;
-               width: 100%;
-               padding: 10px;
+               overflow: hidden;
+               cursor: pointer;
 
-               &:focus {
-                  border: 1.5px solid $mariner;
+               &::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  opacity: 0;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  transition: all 300ms ease-in-out;
+                  background: hsla(0, 0%, 0%, 0.3);
+               }
+
+               &:hover::before {
+                  opacity: 1;
+               }
+
+               &:hover > span {
+                  opacity: 1;
+               }
+
+               & .profPic {
+                  width: 100%;
+               }
+
+               & #imageInput {
+                  display: none;
+               }
+
+               & span {
+                  transition: all 300ms ease-in-out;
+                  opacity: 0;
+                  text-align: center;
+                  color: $whisper;
+                  position: absolute;
                }
             }
          }

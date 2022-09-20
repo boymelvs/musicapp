@@ -56,7 +56,7 @@ const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
                <input type="checkbox" name="profileCheckbox" id="profileCheckbox" ref={profileCheckboxRef} />
 
                <label htmlFor="profileCheckbox">
-                  <img src={avatar} className="avatar" alt="profile avatar" />
+                  <img src={isAdmin.image || avatar} className="avatar" alt="profile avatar" />
                </label>
 
                <label htmlFor="profileCheckbox" className="profile">

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import playBtn from "../../../assets/images/player/plays.svg";
 import paused from "../../../assets/images/player/paused.svg";
 import heart from "../../../assets/images/fave/heart.svg";
@@ -11,8 +12,16 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
 
    const addTo = (song) => {
       const isAdded = allTracks.includes(song);
+      const data = {
+         id: isAdmin.id,
+         title: song.title,
+         track: song.track,
+         artistName: song.artistName,
+         albumImg: song.albumImg,
+      };
 
       if (isAdded) {
+         onDeleteFavorites(song);
          return;
       }
 
@@ -20,6 +29,9 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
 
       const saveTracks = JSON.stringify([...allTracks, song]);
       localStorage.setItem("saveTracks", saveTracks);
+
+      // save to db
+      axios.post("/", data);
    };
 
    const faveSongsRender = songs.map((song, idx) => {

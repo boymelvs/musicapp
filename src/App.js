@@ -4,23 +4,20 @@ import { useNavigate } from "react-router-dom";
 import Headers from "./components/headers/Headers";
 import Main from "./components/mains/Main";
 import Footers from "./components/footers/Footers";
-// import sampleSongs from "./assets/songs/SongData";
+import sampleSongs from "./assets/songs/SongData";
 import loadingImg from "./assets/images/fave/loading.svg";
 axios.defaults.baseURL = "http://localhost:8000";
 
 function App() {
    let navigate = useNavigate();
-   const [songs, setSongs] = useState([]);
+   const [songs, setSongs] = useState(sampleSongs);
+   const [allTracks, setAllTracks] = useState([]);
    const [loading, setLoading] = useState(false);
    const [index, setIndex] = useState(0);
    const [music, setMusic] = useState({
       isPlaying: false,
       isLength: songs.length,
    });
-
-   const saveTracks = localStorage.getItem("saveTracks");
-   const faveTracks = saveTracks ? JSON.parse(saveTracks) : [];
-   const [allTracks, setAllTracks] = useState(faveTracks);
 
    const datas = localStorage.getItem("logInfo");
    const logInfo = datas ? JSON.parse(datas) : {};
@@ -29,7 +26,20 @@ function App() {
    useEffect(() => {
       const logInfo = JSON.stringify(isAdmin);
       localStorage.setItem("logInfo", logInfo);
-      startSearch();
+      // startSearch();
+
+      // if (isAdmin.id) {
+      //    // get favesong on db
+
+      //    axios
+      //       .get("/", isAdmin.id)
+      //       .then((res) => {
+      //          console.log(res.data);
+      //       })
+      //       .catch((err) => {
+      //          console.log(err);
+      //       });
+      // }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [isAdmin]);
 

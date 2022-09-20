@@ -57,6 +57,7 @@
          width: 350px;
          border-radius: 5px;
          background: $hawkes-blue;
+         position: relative;
 
          @media (min-width: 768px) {
             width: 450px;
@@ -132,13 +133,31 @@
                   display: none;
                }
 
-               & span {
+               & .uploadText {
                   transition: all 300ms ease-in-out;
                   opacity: 0;
                   text-align: center;
                   color: $whisper;
                   position: absolute;
+
+                  & .size {
+                     display: block;
+                     font-size: 12px;
+                  }
                }
+            }
+         }
+
+         & .warning {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 35px;
+            font-size: 12px;
+            color: $light-red;
+
+            &.active {
+               display: block;
             }
          }
 

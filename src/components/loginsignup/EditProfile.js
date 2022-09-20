@@ -7,6 +7,10 @@ import avatar from "../../assets/images/profile/avatar.png";
 const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
    const [editUser, setEditUser] = useState(user);
    const [profilePhoto, setProfilePhoto] = useState({ file: "", imagePreview: "" });
+   const [checkFilesize, setCheckFilesize] = useState({
+      size: 0,
+      isBig: false,
+   });
    let navigate = useNavigate();
 
    useEffect(() => {
@@ -21,6 +25,11 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
       if (e.target.name === "image") {
          value = e.target.files[0];
 
+         if (value.size / (1024000 * 2) > 2) {
+            setCheckFilesize({ ...checkFilesize, isBig: true });
+            return;
+         }
+
          //display photo before send to db
          const reader = new FileReader();
          reader.onloadend = () => {
@@ -31,10 +40,17 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
       }
 
       setEditUser({ ...editUser, [e.target.name]: value });
+      setCheckFilesize({ ...checkFilesize, isBig: false });
    };
 
    const onFormSubmit = (e) => {
       e.preventDefault();
+
+      if (checkFilesize.isBig) {
+         console.log(test);
+         return;
+      }
+
       setShowEdit(false);
       setUser(editUser);
 
@@ -89,7 +105,6 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
       return editUser.image || avatar;
    };
 
-   console.log(profilePhoto);
    return (
       <div className="editProfileContainer">
          <div className="profile">
@@ -112,10 +127,14 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
                      </div>
                   </div>
 
+                  <div className={`warning ${checkFilesize.isBig && "active"}`}>File size is over 2mb</div>
                   <label htmlFor="imageInput" className="profilePicContainer">
                      <img src={onChangePhoto()} className="profPic" alt="" />
                      <input className="uploadPhoto" name="image" id="imageInput" type="file" accept="image/*" onChange={onInputChange} />
-                     <span>Upload</span>
+                     <span className="uploadText">
+                        Upload
+                        <span className="size"> size: 2mb</span>
+                     </span>
                   </label>
                </div>
 

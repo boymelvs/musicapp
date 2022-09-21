@@ -18,7 +18,7 @@ const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => 
 
    const faveSongsRender = songs.map((song, idx) => {
       return (
-         <div className="cardSong" key={song.id}>
+         <div className="cardSong" key={song.track_id || idx}>
             <div className="close" onClick={() => onDelete(song)}>
                X
             </div>

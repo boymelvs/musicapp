@@ -28,14 +28,12 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
 
       // save favorite song to db
       if (isAdmin.id && !isAdded) {
-         console.log("test");
-
          axios
             .post("users/add-song", data)
             .then((res) => {
                if (res.status === 200) {
                   setAllTracks([...allTracks, song]);
-                  console.log(res.data);
+                  // console.log(res.data);
                }
             })
             .catch((err) => {
@@ -44,10 +42,23 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
       }
    };
 
+   const isAdd = (song) => {
+      let result = false;
+
+      for (let track of allTracks) {
+         if (track.id === song.id) {
+            result = true;
+            break;
+         }
+      }
+
+      return result;
+   };
+
    const faveSongsRender = songs.map((song, idx) => {
       return (
          <div className="cardSong" key={song.id || idx}>
-            {isAdmin.id && <img src={allTracks.includes(song) ? addHeart : heart} alt="favorites" className="heart" onClick={(e) => addTo(song)} />}
+            {isAdmin.id && <img src={isAdd(song) ? addHeart : heart} alt="favorites" className="heart" onClick={(e) => addTo(song)} />}
 
             <div className="cardSongImg" onClick={() => onSongClick(idx)}>
                <img src={song.album_img} alt={song.artist_name} className="songImg" />

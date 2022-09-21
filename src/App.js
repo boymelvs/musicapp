@@ -29,20 +29,10 @@ function App() {
 
       if (!isAdmin.id) {
          startSearch();
+      } else {
+         setAllTracks(isAdmin.favorites ? isAdmin.favorites : []);
       }
 
-      // if (isAdmin.id) {
-      //    // get favesong on db
-
-      //    axios
-      //       .get("/", isAdmin.id)
-      //       .then((res) => {
-      //          console.log(res.data);
-      //       })
-      //       .catch((err) => {
-      //          console.log(err);
-      //       });
-      // }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [isAdmin]);
 

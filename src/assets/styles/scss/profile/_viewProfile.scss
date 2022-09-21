@@ -19,6 +19,7 @@
          border-radius: 10px;
          background: $whisper;
          border: 1px solid $mariner;
+         max-width: 350px;
          position: relative;
 
          & .profPic {
@@ -41,6 +42,7 @@
                color: $mariner;
                font-weight: $font-weight-700;
                text-align: center;
+               max-width: 350px;
 
                & .edit {
                   position: absolute;

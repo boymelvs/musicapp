@@ -115,12 +115,12 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
                   <div className="namesContainer">
                      <div className="field firstName-container">
                         <label htmlFor="email">First Name</label>
-                        <input type="text" name="first_name" id="first_name" className="form-field" value={editUser.first_name} onChange={onInputChange} required />
+                        <input type="text" name="first_name" id="first_name" className="form-field" value={editUser.first_name} onChange={onInputChange} maxLength="80" required />
                      </div>
 
                      <div className="field lastName-container">
                         <label htmlFor="last_name">Last Name</label>
-                        <input type="text" name="last_name" id="last_name" className="form-field" value={editUser.last_name} onChange={onInputChange} required />
+                        <input type="text" name="last_name" id="last_name" className="form-field" value={editUser.last_name} onChange={onInputChange} maxLength="80" required />
                      </div>
                   </div>
 

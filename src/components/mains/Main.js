@@ -37,7 +37,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
       // delete on db
       if (isAdmin.id) {
          axios
-            .delete(`/users/delete-song/${songToDelete.id}`)
+            .post(`/users/delete-song/${songToDelete.id}`, { user_id: isAdmin.id })
             .then((res) => {
                setAllTracks(newAlltracks);
                setFaveIndex(0);

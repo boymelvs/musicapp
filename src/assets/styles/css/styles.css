@@ -1175,7 +1175,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   transform-origin: left;
 }
 .profileContainer .profile .profileCard .profInfo .email {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .profileContainer .favoritesContainer {
   width: 100%;

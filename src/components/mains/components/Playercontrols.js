@@ -35,7 +35,7 @@ const Playercontrols = ({ music, songs, setMusic, audioPlayer, index, setIndex, 
       <div className="playerControls">
          <div className="nextToPlay" onClick={nextSong}>
             <div className="nextToPlayImgContainer">
-               <img src={songs[newIndex].albumImg} alt="metallica" className="nextPlayImg" />
+               <img src={songs[newIndex].album_img} alt="metallica" className="nextPlayImg" />
 
                <img src={play} alt="play" className="nextPlayBtn" />
             </div>
@@ -43,7 +43,7 @@ const Playercontrols = ({ music, songs, setMusic, audioPlayer, index, setIndex, 
             <div className="nextPlayTitleArtist">
                <div className="nextPlayTitle">{songs[newIndex].title}</div>
 
-               <div className="nextPlayArtist">{`by ${songs[newIndex].artistName}`}</div>
+               <div className="nextPlayArtist">{`by ${songs[newIndex].artist_name}`}</div>
             </div>
 
             <div className="nextSongText">{`${songs.length - 1 === index ? "Last Song" : "Next Song"}`}</div>

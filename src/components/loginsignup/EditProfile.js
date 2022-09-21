@@ -14,8 +14,6 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
    let navigate = useNavigate();
 
    useEffect(() => {
-      const logInfo = JSON.stringify(user);
-      localStorage.setItem("logInfo", logInfo);
       setEditUser(user);
    }, [user]);
 
@@ -47,7 +45,6 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
       e.preventDefault();
 
       if (checkFilesize.isBig) {
-         console.log(test);
          return;
       }
 
@@ -66,12 +63,12 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
             // console.log(res);
             swal("Saved!", "", "success");
             setIsAdmin({ ...editUser, image: res.data.image });
+            navigate("/profile");
          })
          .catch((err) => {
             swal("Error!", err.response.data.message, "error");
+            console.log(err);
          });
-
-      navigate("/profile");
    };
 
    const onConfirmDelete = (e) => {

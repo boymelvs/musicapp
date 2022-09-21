@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 import { signup, realTimeChecking } from "./FormValidation";
 
 const Signup = ({ setIsAdmin }) => {
+   let navigate = useNavigate();
    const formUseref = useRef();
    const [user, setUser] = useState({
       first_name: "",
@@ -38,10 +40,11 @@ const Signup = ({ setIsAdmin }) => {
          axios
             .post("/users/signup", data)
             .then((res) => {
-               // console.log(res);
+               console.log(res);
                swal("Thank You For Signing Up!", "", "success");
                setUser({ first_name: "", last_name: "", email: "", password: "", confirm_password: "", error_list: {} });
                setIsAdmin(res.data);
+               navigate("/");
             })
             .catch((error) => {
                console.log(error.response.data);

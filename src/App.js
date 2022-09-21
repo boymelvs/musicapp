@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import Headers from "./components/headers/Headers";
 import Main from "./components/mains/Main";
 import Footers from "./components/footers/Footers";
-import sampleSongs from "./assets/songs/SongData";
+// import sampleSongs from "./assets/songs/SongData";
 import loadingImg from "./assets/images/fave/loading.svg";
 axios.defaults.baseURL = "http://localhost:8000";
 
 function App() {
    let navigate = useNavigate();
-   const [songs, setSongs] = useState(sampleSongs);
+   const [songs, setSongs] = useState([]);
    const [allTracks, setAllTracks] = useState([]);
    const [loading, setLoading] = useState(false);
    const [index, setIndex] = useState(0);
@@ -26,7 +26,10 @@ function App() {
    useEffect(() => {
       const logInfo = JSON.stringify(isAdmin);
       localStorage.setItem("logInfo", logInfo);
-      // startSearch();
+
+      if (!isAdmin.id) {
+         startSearch();
+      }
 
       // if (isAdmin.id) {
       //    // get favesong on db
@@ -55,11 +58,11 @@ function App() {
       axios
          .post("/search", data)
          .then((res) => {
-            navigate("/");
-            setSongs(res.data);
             // console.log(res.data);
-            setLoading(false);
+            setSongs(res.data);
             setMusic({ ...music, isLength: res.data.length });
+            setLoading(false);
+            navigate("/");
          })
          .catch((err) => {
             console.log(err);
@@ -87,6 +90,7 @@ function App() {
                setAllTracks={setAllTracks}
                isAdmin={isAdmin}
                setIsAdmin={setIsAdmin}
+               startSearch={startSearch}
             />
          )}
 

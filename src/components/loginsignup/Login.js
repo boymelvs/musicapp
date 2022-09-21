@@ -3,7 +3,7 @@ import { login } from "./FormValidation";
 import axios from "axios";
 import swal from "sweetalert";
 
-const Login = ({ setIsAdmin }) => {
+const Login = ({ setIsAdmin, startSearch }) => {
    const [user, setUser] = useState({
       email: "",
       password: "",
@@ -26,6 +26,7 @@ const Login = ({ setIsAdmin }) => {
             .then((res) => {
                // console.log(res);
                setIsAdmin(res.data);
+               startSearch();
                swal("Welcome To Music App!", "", "success");
             })
             .catch((err) => {

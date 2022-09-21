@@ -256,8 +256,17 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status {
-  font-size: 20px;
+  font-size: 18px;
+  color: hsl(225deg, 48%, 46%);
   font-weight: 700;
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status span {
+  color: hsl(212deg, 29%, 13%);
+}
+.cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .title {
+  font-size: 14px;
+  color: hsl(212deg, 29%, 13%);
+  font-weight: 600;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot {
   display: flex;
@@ -416,10 +425,12 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
 }
 .songContainer .cardSongContainer .cardSong .titleArtist .cardSongTitle {
+  font-size: 14px;
   font-weight: 700;
 }
 .songContainer .cardSongContainer .cardSong .titleArtist .cardSongArtist {
-  font-size: 14px;
+  padding-top: 5px;
+  font-size: 8px;
 }
 
 /* Favorite Song */
@@ -1123,6 +1134,14 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .profileContainer .profile .profileCard .profPic img {
   width: 100%;
 }
+.profileContainer .profile .profileCard .profInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
 .profileContainer .profile .profileCard .profInfo .name {
   font-size: 20px;
   color: hsl(225deg, 48%, 46%);
@@ -1154,7 +1173,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   transform-origin: left;
 }
 .profileContainer .profile .profileCard .profInfo .email {
-  font-size: 14px;
+  font-size: 12px;
 }
 .profileContainer .favoritesContainer {
   width: 100%;

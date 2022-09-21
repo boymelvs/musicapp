@@ -9,8 +9,9 @@ import Signup from "../loginsignup/Signup";
 import Notfound from "../modal/Notfound";
 import ViewProfile from "../loginsignup/ViewProfile";
 import About from "../about/About";
+import axios from "axios";
 
-const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, setAllTracks, isAdmin, setIsAdmin }) => {
+const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, setAllTracks, isAdmin, setIsAdmin, startSearch }) => {
    const [faveIndex, setFaveIndex] = useState(0);
    const [faveMusic, setfaveMusic] = useState({
       isPlaying: music.isPlaying,
@@ -32,20 +33,26 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
 
       setfaveMusic({ ...faveMusic, isPlaying: false });
       newAlltracks.splice(newAlltracks.indexOf(songToDelete), 1);
-      setAllTracks(newAlltracks);
-      setFaveIndex(0);
-
-      const saveTracks = JSON.stringify(newAlltracks);
-      localStorage.setItem("saveTracks", saveTracks);
 
       // delete on db
+      if (isAdmin.id) {
+         axios
+            .delete(`/users/delete-song/${songToDelete.id}`)
+            .then((res) => {
+               setAllTracks(newAlltracks);
+               setFaveIndex(0);
+            })
+            .catch((err) => {
+               console.log(err);
+            });
+      }
    };
 
    return (
       <main className="myMain">
          <section className="playerSection">
             <Routes>
-               <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
+               <Route path="/login" element={<Login setIsAdmin={setIsAdmin} startSearch={startSearch} />} />
                <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
                <Route path="/profile" element={<ViewProfile songs={allTracks} isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
                <Route path="/about" element={<About />} />

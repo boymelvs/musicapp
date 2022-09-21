@@ -16,13 +16,13 @@ const ViewProfile = ({ songs, isAdmin, setIsAdmin }) => {
       return (
          <div className="cardSong" key={song.id || idx}>
             <div className="cardSongImg">
-               <img src={song.albumImg} alt={song.artistName} className="songImg" />
+               <img src={song.album_img} alt={song.artist_name} className="songImg" />
             </div>
 
             <div className="titleArtist">
                <div className="cardSongTitle">{song.title}</div>
 
-               <div className="cardSongArtist">{`by ${song.artistName}`}</div>
+               <div className="cardSongArtist">{`by ${song.artist_name}`}</div>
             </div>
          </div>
       );
@@ -63,7 +63,7 @@ const ViewProfile = ({ songs, isAdmin, setIsAdmin }) => {
          </div>
 
          <div className="favoritesContainer">
-            <h2>Your Favorites</h2>
+            <h2>Most Played Songs</h2>
             <div className="favorites">{faveSongsRender}</div>
          </div>
          {showEdit && <EditProfile user={user} setUser={setUser} setShowEdit={setShowEdit} setIsAdmin={setIsAdmin} />}

@@ -13,11 +13,12 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
    const addTo = (song) => {
       const isAdded = allTracks.includes(song);
       const data = {
-         id: isAdmin.id,
+         user_id: isAdmin.id,
+         track_id: song.id,
          title: song.title,
          track: song.track,
-         artistName: song.artistName,
-         albumImg: song.albumImg,
+         artist_name: song.artist_name,
+         album_img: song.album_img,
       };
 
       if (isAdded) {
@@ -25,13 +26,22 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
          return;
       }
 
-      setAllTracks([...allTracks, song]);
+      // save favorite song to db
+      if (isAdmin.id && !isAdded) {
+         console.log("test");
 
-      const saveTracks = JSON.stringify([...allTracks, song]);
-      localStorage.setItem("saveTracks", saveTracks);
-
-      // save to db
-      axios.post("/", data);
+         axios
+            .post("users/add-song", data)
+            .then((res) => {
+               if (res.status === 200) {
+                  setAllTracks([...allTracks, song]);
+                  console.log(res.data);
+               }
+            })
+            .catch((err) => {
+               console.log("My Error", err);
+            });
+      }
    };
 
    const faveSongsRender = songs.map((song, idx) => {
@@ -40,7 +50,7 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
             {isAdmin.id && <img src={allTracks.includes(song) ? addHeart : heart} alt="favorites" className="heart" onClick={(e) => addTo(song)} />}
 
             <div className="cardSongImg" onClick={() => onSongClick(idx)}>
-               <img src={song.albumImg} alt={song.artistName} className="songImg" />
+               <img src={song.album_img} alt={song.artist_name} className="songImg" />
 
                <img src={music.isPlaying && index === idx ? paused : playBtn} alt="play" className="playBtn" />
             </div>
@@ -48,7 +58,7 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
             <div className="titleArtist">
                <div className="cardSongTitle">{song.title}</div>
 
-               <div className="cardSongArtist">{`by ${song.artistName}`}</div>
+               <div className="cardSongArtist">{`by ${song.artist_name}`}</div>
             </div>
          </div>
       );

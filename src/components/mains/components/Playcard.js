@@ -9,20 +9,20 @@ const Playcard = ({ song }) => {
       <div className="cardPlayContainer">
          <div className="cardPlay">
             <div className="cardPlayImg">
-               <img src={song.albumImg} alt={song.artistName} />
+               <img src={song.album_img} alt={song.artist_name} />
             </div>
 
             <div className="titleDotContainer">
                <input type="checkbox" name="dot" id="dotCheckbox" />
 
                <div className="cardPlayStatus">
-                  <div className="status">{`"${song.title}" is Now Playing`}</div>
-                  <div className="title">{`by ${song.artistName}`}</div>
-               </div>
+                  <div className="status">
+                     {`"${song.title}" `}
+                     <span>- is Now Playing</span>
+                  </div>
 
-               {/* <label htmlFor="dotCheckbox" className="cardPlayDot">
-                  <img src={heart} alt="heart" className="heart" />
-               </label> */}
+                  <div className="title">{`by ${song.artist_name}`}</div>
+               </div>
 
                <div className="addFavorite">
                   <label htmlFor="dotCheckbox" className="addFaveLabel">

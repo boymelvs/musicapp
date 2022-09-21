@@ -23,7 +23,7 @@ const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => 
                X
             </div>
             <div className="cardSongImg" onClick={() => onSongClick(idx)}>
-               <img src={song.albumImg} alt={song.artistName} className="songImg" />
+               <img src={song.album_img} alt={song.artist_name} className="songImg" />
 
                <img src={music.isPlaying && index === idx ? paused : playBtn} alt="play" className="playBtn" />
             </div>
@@ -31,7 +31,7 @@ const Favesongs = ({ songs, index, playFavorite, music, onDeleteFavorites }) => 
             <div className="titleArtist">
                <div className="cardSongTitle">{song.title}</div>
 
-               <div className="cardSongArtist">{`by ${song.artistName}`}</div>
+               <div className="cardSongArtist">{`by ${song.artist_name}`}</div>
             </div>
          </div>
       );

@@ -58,19 +58,19 @@ const Signup = ({ setIsAdmin }) => {
          <form action="" id="signupForm" ref={formUseref} onSubmit={onFormSubmit}>
             <div className="field firstName-container">
                <label htmlFor="email">First Name*</label>
-               <input type="text" name="first_name" id="first_name" className="form-field" value={user.first_name} onChange={onInputChange} maxLength="101" required />
+               <input type="text" name="first_name" id="first_name" className="form-field" value={user.first_name} onChange={onInputChange} maxLength="80" required />
                <div className="warning">Must not empty. Or First Name Too Long</div>
             </div>
 
             <div className="field lastName-container">
                <label htmlFor="email">Last Name*</label>
-               <input type="text" name="last_name" id="last_name" className="form-field" value={user.last_name} onChange={onInputChange} maxLength="101" required />
+               <input type="text" name="last_name" id="last_name" className="form-field" value={user.last_name} onChange={onInputChange} maxLength="80" required />
                <div className="warning">Must not empty. Or Last Name Too Long</div>
             </div>
 
             <div className="field email-container">
                <label htmlFor="email">Email</label>
-               <input type="email" name="email" id="email" className="form-field" value={user.email} onChange={onInputChange} maxLength="101" required />
+               <input type="email" name="email" id="email" className="form-field" value={user.email} onChange={onInputChange} maxLength="100" required />
                <div className="warning" style={{ visibility: `${user.error_list.duplicate && "visible"}` }}>
                   {`${user.error_list.duplicate ? user.error_list.duplicate : "Invalid email. Must not empty."}`}
                </div>
@@ -78,7 +78,7 @@ const Signup = ({ setIsAdmin }) => {
 
             <div className="field password-container">
                <label htmlFor="subject">Password</label>
-               <input type="text" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} minLength="8" required />
+               <input type="text" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} minLength="8" maxLength="250" required />
                <div className="warning">Must not empty and minimum of 8 character. </div>
             </div>
 

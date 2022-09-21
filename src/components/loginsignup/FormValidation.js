@@ -15,7 +15,7 @@ const checkFirstName = (item) => {
    let maxLength = value.length;
    let element = item.first_name;
 
-   if (isRequired(value) && maxLength < 101) {
+   if (isRequired(value) && maxLength < 80) {
       return true;
    }
 
@@ -30,7 +30,7 @@ const checkLastName = (item) => {
    let maxLength = value.length;
    let element = item.last_name;
 
-   if (isRequired(value) && maxLength < 101) {
+   if (isRequired(value) && maxLength < 80) {
       return true;
    }
 
@@ -48,7 +48,7 @@ const checkEmail = (item) => {
    const emailFormat = /[^@ \t\r\n]+@[^@ \t\r\n]+\.(\w{2,3})+$/;
    const isEmailCorrect = emailFormat.test(value);
 
-   if (isRequired(value) && maxLength < 101 && isEmailCorrect) {
+   if (isRequired(value) && maxLength < 100 && isEmailCorrect) {
       return true;
    }
 
@@ -63,7 +63,7 @@ const checkPassword = (item) => {
    let maxLength = value.length;
    let element = item.password;
 
-   if (isRequired(value) && maxLength >= 8 && maxLength < 256) {
+   if (isRequired(value) && maxLength >= 8 && maxLength < 250) {
       return true;
    }
 

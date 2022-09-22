@@ -5,7 +5,7 @@ import paused from "../../../assets/images/player/paused.svg";
 import heart from "../../../assets/images/fave/heart.svg";
 import addHeart from "../../../assets/images/fave/heart1.png";
 
-const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, isAdmin, onDeleteFavorites }) => {
+const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, isAdmin, setIsAdmin, onDeleteFavorites }) => {
    const onSongClick = (idx) => {
       playSearch(idx);
    };
@@ -32,8 +32,9 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
             .post("users/add-song", data)
             .then((res) => {
                if (res.status === 200) {
-                  setAllTracks([...allTracks, song]);
                   // console.log(res.data);
+                  setAllTracks([...allTracks, song]);
+                  setIsAdmin({ ...isAdmin, favorites: [...isAdmin.favorites, song] });
                }
             })
             .catch((err) => {

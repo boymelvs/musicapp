@@ -50,7 +50,7 @@ function App() {
          .then((res) => {
             // console.log(res.data);
             setSongs(res.data);
-            setMusic({ ...music, isLength: res.data.length });
+            setMusic({ ...music, isPlaying: false, isLength: res.data.length });
             setLoading(false);
             navigate("/");
          })
@@ -61,7 +61,7 @@ function App() {
 
    return (
       <div className="container">
-         <Headers startSearch={startSearch} playSearch={playSearch} music={music} setMusic={setMusic} isAdmin={isAdmin} />
+         <Headers startSearch={startSearch} music={music} setMusic={setMusic} isAdmin={isAdmin} />
 
          {loading ? (
             <div className="loadingContainer">

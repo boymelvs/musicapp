@@ -41,6 +41,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
             .then((res) => {
                setAllTracks(newAlltracks);
                setFaveIndex(0);
+               setIsAdmin({ ...isAdmin, favorites: newAlltracks });
             })
             .catch((err) => {
                console.log(err);
@@ -73,6 +74,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
                               setAllTracks={setAllTracks}
                               allTracks={allTracks}
                               isAdmin={isAdmin}
+                              setIsAdmin={setIsAdmin}
                               onDeleteFavorites={onDeleteFavorites}
                            />
                            <Audioplayer songs={songs} index={index} setIndex={setIndex} music={music} setMusic={setMusic} />

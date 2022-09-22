@@ -5,6 +5,7 @@ import Headers from "./components/headers/Headers";
 import Main from "./components/mains/Main";
 import Footers from "./components/footers/Footers";
 // import sampleSongs from "./assets/songs/SongData";
+import sampleSong from "./assets/songs/Songs";
 import loadingImg from "./assets/images/fave/loading.svg";
 // axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.baseURL = "https://musicappserver-kodego-proj.herokuapp.com/";
@@ -51,13 +52,17 @@ function App() {
          .then((res) => {
             // console.log(res.data);
             setSongs(res.data);
-            setMusic({ ...music, isPlaying: false, isLength: res.data.length });
-            setLoading(false);
             navigate("/");
+            setMusic({ ...music, isLength: res.data.length });
+            setLoading(false);
          })
          .catch((err) => {
             console.log(err);
+            setSongs(sampleSong);
+            setLoading(false);
          });
+
+      setMusic({ ...music, isPlaying: false });
    };
 
    return (

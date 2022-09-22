@@ -6,9 +6,9 @@ import songImg2 from "./song-images/song-2.jpg";
 import shakedown from "./song-images/shakedown.jpg";
 
 const Songs = [
-   { id: 1, title: "Onon", track: onNon, artistName: "Melvin", albumImg: songImg1 },
-   { id: 2, title: "Somebody", track: somebody, artistName: "Neriza", albumImg: songImg2 },
-   { id: 3, title: "Impact", track: impact, artistName: "Francis", albumImg: shakedown },
+   { id: 1, title: "Onon", track: onNon, artist_name: "Melvin", album_img: songImg1 },
+   { id: 2, title: "Somebody", track: somebody, artist_name: "Neriza", album_img: songImg2 },
+   { id: 3, title: "Impact", track: impact, artist_name: "Francis", album_img: shakedown },
 ];
 
 export default Songs;

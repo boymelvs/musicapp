@@ -31,9 +31,12 @@ function App() {
 
       if (!isAdmin.id) {
          localStorage.removeItem("logInfo");
-         startSearch();
       } else {
          setAllTracks(isAdmin.favorites ? isAdmin.favorites : []);
+      }
+
+      if (songs.length === 0) {
+         startSearch();
       }
 
       // eslint-disable-next-line react-hooks/exhaustive-deps

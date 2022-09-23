@@ -868,7 +868,20 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 @media (min-width: 768px) {
   .signupContainer #signupForm {
-    width: 450px;
+    width: 500px;
+  }
+}
+.signupContainer #signupForm .fullName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .signupContainer #signupForm .fullName {
+    flex-direction: row;
   }
 }
 .signupContainer #signupForm .field {

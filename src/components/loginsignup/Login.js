@@ -46,7 +46,7 @@ const Login = ({ setIsAdmin, startSearch }) => {
 
             <div className="field subject-container">
                <label htmlFor="subject">Password</label>
-               <input type="text" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} required />
+               <input type="password" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} required />
                <div className="warning">Must not empty. </div>
             </div>
 

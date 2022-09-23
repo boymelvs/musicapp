@@ -57,13 +57,13 @@ const Signup = ({ setIsAdmin }) => {
       <div className="signupContainer">
          <form action="" id="signupForm" ref={formUseref} onSubmit={onFormSubmit}>
             <div className="field firstName-container">
-               <label htmlFor="email">First Name*</label>
+               <label htmlFor="first_name">First Name*</label>
                <input type="text" name="first_name" id="first_name" className="form-field" value={user.first_name} onChange={onInputChange} maxLength="80" required />
                <div className="warning">Must not empty. Or First Name Too Long</div>
             </div>
 
             <div className="field lastName-container">
-               <label htmlFor="email">Last Name*</label>
+               <label htmlFor="last_name">Last Name*</label>
                <input type="text" name="last_name" id="last_name" className="form-field" value={user.last_name} onChange={onInputChange} maxLength="80" required />
                <div className="warning">Must not empty. Or Last Name Too Long</div>
             </div>
@@ -77,14 +77,14 @@ const Signup = ({ setIsAdmin }) => {
             </div>
 
             <div className="field password-container">
-               <label htmlFor="subject">Password</label>
-               <input type="text" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} minLength="8" maxLength="250" required />
+               <label htmlFor="password">Password</label>
+               <input type="password" name="password" id="password" className="form-field" value={user.password} onChange={onInputChange} minLength="8" maxLength="250" required />
                <div className="warning">Must not empty and minimum of 8 character. </div>
             </div>
 
             <div className="field confirmPassword-container">
-               <label htmlFor="subject">Confirm Password</label>
-               <input type="text" name="confirm_password" id="confirm_password" className="form-field" value={user.confirm_password} onChange={onInputChange} required />
+               <label htmlFor="confirm_password">Confirm Password</label>
+               <input type="password" name="confirm_password" id="confirm_password" className="form-field" value={user.confirm_password} onChange={onInputChange} required />
                <div className="warning" style={{ visibility: `${user.error_list.confirm_password && "visible"}` }}>
                   {`${user.error_list.confirm_password ? user.error_list.confirm_password : "Password does not match!"}`}
                </div>

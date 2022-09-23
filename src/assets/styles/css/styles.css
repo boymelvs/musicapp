@@ -899,7 +899,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   background-image: url("../../images/error/error.svg");
   background-repeat: no-repeat;
   background-size: 15px;
-  background-position: center right 25px;
+  background-position: center right 35px;
   border: 1px solid hsl(0deg, 100%, 63%);
 }
 .signupContainer #signupForm .field input:focus.green-border {

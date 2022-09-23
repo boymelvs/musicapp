@@ -34,7 +34,9 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
                if (res.status === 200) {
                   // console.log(res.data);
                   setAllTracks([...allTracks, song]);
-                  setIsAdmin({ ...isAdmin, favorites: [...isAdmin.favorites, song] });
+                  if (isAdmin.favorites) {
+                     setIsAdmin({ ...isAdmin, favorites: [...isAdmin.favorites, song] });
+                  }
                }
             })
             .catch((err) => {

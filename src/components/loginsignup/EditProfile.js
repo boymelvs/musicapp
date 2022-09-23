@@ -60,7 +60,7 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
       axios
          .post("/users/profile", formData)
          .then((res) => {
-            // console.log(res);
+            // console.log(res, "after edit");
             swal("Saved!", "", "success");
             setIsAdmin({ ...editUser, image: res.data.image });
             navigate("/profile");

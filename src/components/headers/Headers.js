@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo/logo.png";
 import avatar from "../../assets/images/profile/avatar.png";
 import Search from "./Search";
 
-const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
+const Headers = ({ startSearch, music, setMusic, isAdmin, setIsAdmin }) => {
    const profileCheckboxRef = useRef();
    const location = useLocation().pathname;
 
@@ -14,9 +14,10 @@ const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
    };
 
    const onLogout = () => {
-      localStorage.removeItem("logInfo");
       localStorage.removeItem("saveTracks");
       profileCheckboxRef.current.checked = false;
+
+      setIsAdmin({});
    };
 
    return (
@@ -64,9 +65,9 @@ const Headers = ({ startSearch, music, setMusic, isAdmin }) => {
                      View Profile
                   </Link>
 
-                  <a href="/" className="logout" onClick={onLogout}>
+                  <div className="logout" onClick={onLogout}>
                      Logout
-                  </a>
+                  </div>
                </label>
             </div>
          </div>

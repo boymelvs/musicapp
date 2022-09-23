@@ -40,7 +40,7 @@ const Signup = ({ setIsAdmin }) => {
          axios
             .post("/users/signup", data)
             .then((res) => {
-               console.log(res);
+               // console.log(res);
                swal("Thank You For Signing Up!", "", "success");
                setUser({ first_name: "", last_name: "", email: "", password: "", confirm_password: "", error_list: {} });
                setIsAdmin(res.data);

@@ -30,6 +30,7 @@ function App() {
       localStorage.setItem("logInfo", logInfo);
 
       if (!isAdmin.id) {
+         localStorage.removeItem("logInfo");
          startSearch();
       } else {
          setAllTracks(isAdmin.favorites ? isAdmin.favorites : []);
@@ -67,7 +68,7 @@ function App() {
 
    return (
       <div className="container">
-         <Headers startSearch={startSearch} music={music} setMusic={setMusic} isAdmin={isAdmin} />
+         <Headers startSearch={startSearch} music={music} setMusic={setMusic} isAdmin={isAdmin} setIsAdmin={setIsAdmin} />
 
          {loading ? (
             <div className="loadingContainer">

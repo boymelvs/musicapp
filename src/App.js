@@ -53,8 +53,8 @@ function App() {
          .then((res) => {
             // console.log(res.data);
             setSongs(res.data);
-            navigate("/");
             setMusic({ ...music, isLength: res.data.length });
+            navigate("/");
             setLoading(false);
          })
          .catch((err) => {
@@ -62,8 +62,6 @@ function App() {
             setSongs(sampleSong);
             setLoading(false);
          });
-
-      setMusic({ ...music, isPlaying: false });
    };
 
    return (

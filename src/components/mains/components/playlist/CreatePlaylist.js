@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Audioplayer from "../Audioplayer";
 import Notfound from "../../../modal/Notfound";
 import Playcard from "../Playcard";
 import Favesongs from "../Favesongs";
 
 const CreatePlaylist = ({ allTracks, faveIndex, setFaveIndex, playFavorite, faveMusic, onDeleteFavorites, setfaveMusic }) => {
+   useEffect(() => {
+      setfaveMusic({ ...faveMusic, isPlaying: false });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
+
    if (allTracks.length === 0) {
       return <Notfound value={"Saved Favorites"} />;
    }

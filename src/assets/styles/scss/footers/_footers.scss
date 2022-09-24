@@ -49,6 +49,8 @@
       & .policy {
          position: relative;
          cursor: pointer;
+         text-decoration: none;
+         color: $whisper;
 
          &::before {
             content: "";

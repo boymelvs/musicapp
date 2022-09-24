@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import socialMedia from "../../assets/images/social-media/ImgMedia";
 
 const Footers = () => {
@@ -15,7 +16,10 @@ const Footers = () => {
          </div>
 
          <div className="termsPrivacyContainer">
-            <div className="policy terms">Terms & Conditions</div> |<div className="policy privacy">Privacy</div>
+            {/* <div className="policy terms">Terms & Conditions</div> | */}
+            <Link to="/privacy" className="policy privacy">
+               Privacy Policy
+            </Link>
          </div>
       </footer>
    );

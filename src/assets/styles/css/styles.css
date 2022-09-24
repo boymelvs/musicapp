@@ -744,6 +744,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .myFooters .termsPrivacyContainer .policy {
   position: relative;
   cursor: pointer;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
 }
 .myFooters .termsPrivacyContainer .policy::before {
   content: "";
@@ -1545,6 +1547,50 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .modalDelete .modalForm .btnContainer .deleteBtn {
   background: hsl(0deg, 0%, 100%);
   color: hsl(225deg, 48%, 46%);
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding: 30px;
+  color: hsl(225deg, 48%, 46%);
+}
+.aboutContainer h2 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+.aboutContainer .para {
+  text-align: justify;
+  max-width: 800px;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.privacyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  padding: 30px;
+  color: hsl(225deg, 48%, 46%);
+}
+.privacyContainer h2 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+.privacyContainer .para {
+  text-align: justify;
+  max-width: 800px;
+  padding: 20px;
+  font-weight: 600;
 }
 
 *,

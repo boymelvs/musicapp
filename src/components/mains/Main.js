@@ -10,6 +10,7 @@ import Notfound from "../modal/Notfound";
 import ViewProfile from "../loginsignup/ViewProfile";
 import About from "../about/About";
 import axios from "axios";
+import Privacy from "../privacy/Privacy";
 
 const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, setAllTracks, isAdmin, setIsAdmin, startSearch }) => {
    const [faveIndex, setFaveIndex] = useState(0);
@@ -57,6 +58,7 @@ const Main = ({ songs, index, setIndex, playSearch, music, setMusic, allTracks, 
                <Route path="/signup" element={<Signup setIsAdmin={setIsAdmin} />} />
                <Route path="/profile" element={<ViewProfile songs={allTracks} isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
                <Route path="/about" element={<About />} />
+               <Route path="/privacy" element={<Privacy />} />
 
                <Route
                   path="/"

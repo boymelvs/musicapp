@@ -56,14 +56,13 @@ function App() {
          .then((res) => {
             // console.log(res.data);
             setSongs(res.data);
-            setMusic({ ...music, isLength: res.data.length });
+            setMusic({ ...music, isPlaying: false, isLength: res.data.length });
             navigate("/");
             setLoading(false);
          })
          .catch((err) => {
             console.log(err);
             setSongs(sampleSong);
-            setLoading(false);
          });
    };
 

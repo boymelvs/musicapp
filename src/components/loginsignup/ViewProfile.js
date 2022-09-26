@@ -63,7 +63,7 @@ const ViewProfile = ({ songs, isAdmin, setIsAdmin }) => {
          </div>
 
          <div className="favoritesContainer">
-            <h2>Most Played Songs</h2>
+            <h2>List of Songs</h2>
             <div className="favorites">{faveSongsRender}</div>
          </div>
          {showEdit && <EditProfile user={user} setUser={setUser} setShowEdit={setShowEdit} setIsAdmin={setIsAdmin} />}

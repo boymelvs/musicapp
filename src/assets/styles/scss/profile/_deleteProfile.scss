@@ -38,7 +38,6 @@
          @include flexBox(column, center, center, 10px);
          width: 100%;
          font-weight: $font-weight-500;
-         color: $mariner;
 
          & input {
             border: 1.5px solid $hawkes-blue;

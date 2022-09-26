@@ -5,7 +5,7 @@
    & h2 {
       font-size: 30px;
       padding: 10px;
-      color: $mariner;
+      color: $hawkes-light-blue;
    }
 
    & .cardSongContainer {
@@ -26,6 +26,7 @@
          width: 100%;
          background: $whisper;
          transition: all 200ms ease-in-out;
+         background: $hawkes-light-blue;
          position: relative;
 
          &:hover {
@@ -38,6 +39,7 @@
             position: absolute;
             top: 30%;
             left: 35%;
+            display: block;
          }
 
          @media (min-width: 768px) {
@@ -55,6 +57,10 @@
             &:hover {
                transform: scale(1.05);
             }
+         }
+
+         & .playBtn {
+            display: none;
          }
 
          & .cardSongImg {

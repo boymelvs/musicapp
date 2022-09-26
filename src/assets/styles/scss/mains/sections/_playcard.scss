@@ -26,7 +26,6 @@
 
       & .titleDotContainer {
          @include flexBox(row, unset, space-between, 0);
-
          width: 350px;
          position: relative;
 
@@ -36,18 +35,24 @@
 
             & .status {
                font-size: 18px;
-               color: $mariner;
-               font-weight: $font-weight-700;
+               color: $hawkes-light-blue;
+               font-weight: $font-weight-600;
+
+               @media (min-width: 992px) {
+                  font-size: 20px;
+               }
 
                & span {
-                  color: $black-pearl;
+                  font-weight: $font-weight-400;
+                  font-size: 18px;
+                  color: $hawkes-light-blue;
                }
             }
 
             & .title {
                font-size: 14px;
-               color: $black-pearl;
-               font-weight: $font-weight-600;
+               color: $hawkes-light-blue;
+               // font-weight: $font-weight-600;
             }
          }
 

@@ -19,7 +19,7 @@
 
    & .profile {
       @include flexBox(column, center, center, 5px);
-      background: $whisper;
+      background: $hawkes-blue;
       z-index: 10;
       border-radius: 5px;
       margin-top: 30px;
@@ -27,7 +27,7 @@
 
       & h2 {
          text-align: center;
-         color: $mariner;
+         color: $hawkes-light-blue;
       }
 
       & .delete {
@@ -38,7 +38,7 @@
          border: none;
          border-radius: 5px;
          background: $light-red;
-         color: $whisper;
+         color: $hawkes-light-blue;
 
          &:hover {
             box-shadow: 0 0 2px $light-red;
@@ -56,7 +56,7 @@
          padding: 30px;
          width: 350px;
          border-radius: 5px;
-         background: $hawkes-blue;
+         background: $hawkes-light-blue;
          position: relative;
 
          @media (min-width: 768px) {
@@ -88,6 +88,7 @@
                      outline: none;
                      width: 100%;
                      padding: 10px;
+                     background: $hawkes-light-blue;
 
                      &:focus {
                         border: 1.5px solid $mariner;
@@ -171,6 +172,7 @@
                padding: 10px;
                width: 100%;
                font-size: 14px;
+               font-weight: $font-weight-600;
 
                &:hover {
                   cursor: pointer;
@@ -183,13 +185,13 @@
             }
 
             & .cancelBtn {
-               color: $whisper;
-               background: $mariner;
+               color: $mariner;
+               background: $hawkes-light-blue;
             }
 
             & .deleteBtn {
-               background: $whisper;
-               color: $mariner;
+               background: $mariner;
+               color: $hawkes-light-blue;
             }
          }
       }

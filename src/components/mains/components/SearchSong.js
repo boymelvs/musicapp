@@ -80,7 +80,7 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
 
    return (
       <div className="songContainer">
-         <h2>Search Results </h2>
+         <h2>Results </h2>
          <div className="cardSongContainer">{faveSongsRender}</div>
       </div>
    );

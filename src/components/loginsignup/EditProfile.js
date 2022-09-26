@@ -105,7 +105,7 @@ const EditProfile = ({ user, setUser, setShowEdit, setIsAdmin }) => {
    return (
       <div className="editProfileContainer">
          <div className="profile">
-            <h2>Update Information</h2>
+            <h2>Update Your Profile</h2>
             <button type="button" className="delete" onClick={onConfirmDelete}>
                Delete
             </button>

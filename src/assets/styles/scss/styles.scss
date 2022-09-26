@@ -10,7 +10,7 @@
 
 body {
    position: relative;
-   color: $black-pearl;
+   color: $hawkes-light-blue;
 }
 
 .container {
@@ -18,6 +18,8 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   gap: 1px;
    width: 100%;
    font-family: $font-fam-raleway;
+   background: $hawkes-light-blue;
 }

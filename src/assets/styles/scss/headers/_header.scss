@@ -46,7 +46,7 @@ header {
          position: relative;
          cursor: pointer;
          text-decoration: none;
-         color: $whisper;
+         color: $hawkes-light-blue;
 
          &::before {
             content: "";
@@ -54,7 +54,7 @@ header {
             bottom: -5px;
             left: 0;
             width: 100%;
-            border-bottom: 1px solid $whisper;
+            border-bottom: 1px solid $hawkes-light-blue;
             transform: scale(0, 1);
             transform-origin: right;
             transition: transform 300ms ease-in-out;
@@ -93,6 +93,7 @@ header {
             border-radius: 10px;
             border: none;
             outline: none;
+            background: $hawkes-light-blue;
             background-image: url("../../images/search/search_black.svg");
             background-repeat: no-repeat;
             background-size: 30px;
@@ -102,7 +103,7 @@ header {
 
       & .loginSignup {
          @include flexBox(row, center, center, 10px);
-         color: $whisper;
+         color: $hawkes-light-blue;
 
          @media (max-width: 400px) {
             flex-direction: column;
@@ -119,7 +120,7 @@ header {
          & .login,
          & .signup {
             text-decoration: none;
-            color: $whisper;
+            color: $hawkes-light-blue;
             position: relative;
             cursor: pointer;
 
@@ -129,7 +130,7 @@ header {
                bottom: -5px;
                left: 0;
                width: 100%;
-               border-bottom: 1px solid $whisper;
+               border-bottom: 1px solid $hawkes-light-blue;
                transform: scale(0, 1);
                transform-origin: right;
                transition: transform 300ms ease-in-out;
@@ -153,6 +154,7 @@ header {
             border-radius: 50%;
             width: 60px;
             height: 60px;
+            border: 2px solid $hawkes-light-blue;
             cursor: pointer;
          }
 
@@ -166,7 +168,7 @@ header {
             display: none;
             flex-direction: column;
             color: $mariner;
-            background: $whisper;
+            background: $hawkes-light-blue;
             border-radius: 5px;
             position: absolute;
             top: 70px;
@@ -185,7 +187,7 @@ header {
             & .viewProfile,
             & .logout {
                &:hover {
-                  color: $whisper;
+                  color: $hawkes-light-blue;
                   background: $mariner;
                   cursor: pointer;
                }

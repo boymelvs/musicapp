@@ -17,7 +17,7 @@
          @include flexBox(column, center, center, 20px);
          padding: 40px 30px 30px 30px;
          border-radius: 10px;
-         background: $whisper;
+         background: $hawkes-light-blue;
          border: 1px solid $mariner;
          max-width: 350px;
          position: relative;
@@ -74,7 +74,6 @@
 
             & .email {
                font-size: 14px;
-               // letter-spacing: 1px;
                font-weight: $font-weight-600;
             }
          }
@@ -86,7 +85,7 @@
 
       & h2 {
          text-align: center;
-         color: $mariner;
+         color: $hawkes-light-blue;
       }
 
       & .favorites {
@@ -106,7 +105,7 @@
             border-radius: 5px;
             max-width: 320px;
             width: 100%;
-            background: $whisper;
+            background: $hawkes-light-blue;
             transition: all 200ms ease-in-out;
             position: relative;
 

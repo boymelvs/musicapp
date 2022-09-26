@@ -18,7 +18,7 @@ const Playcard = ({ song }) => {
                <div className="cardPlayStatus">
                   <div className="status">
                      {`"${song.title}" `}
-                     <span>- is Now Playing</span>
+                     <span>- is now playing</span>
                   </div>
 
                   <div className="title">{`by ${song.artist_name}`}</div>

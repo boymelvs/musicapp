@@ -1067,6 +1067,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 10px;
   width: 100%;
   font-weight: 500;
+}
+.modal .modalForm .modalName h2 {
   color: hsl(225deg, 48%, 46%);
 }
 .modal .modalForm .modalName input {

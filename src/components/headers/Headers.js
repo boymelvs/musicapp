@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
 import avatar from "../../assets/images/profile/avatar.png";
 import Search from "./Search";
@@ -7,6 +7,7 @@ import Search from "./Search";
 const Headers = ({ startSearch, music, setMusic, isAdmin, setIsAdmin }) => {
    const profileCheckboxRef = useRef();
    const location = useLocation().pathname;
+   const navigate = useNavigate();
 
    const onNavItemClick = () => {
       setMusic({ ...music, isPlaying: false });
@@ -18,6 +19,7 @@ const Headers = ({ startSearch, music, setMusic, isAdmin, setIsAdmin }) => {
       profileCheckboxRef.current.checked = false;
 
       setIsAdmin({});
+      navigate("/");
    };
 
    return (

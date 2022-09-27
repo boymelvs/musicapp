@@ -31,6 +31,7 @@ function App() {
 
       if (!isAdmin.id) {
          localStorage.removeItem("logInfo");
+         navigate("/");
       } else {
          setAllTracks(isAdmin.favorites ? isAdmin.favorites : []);
       }

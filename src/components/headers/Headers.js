@@ -7,7 +7,7 @@ import Search from "./Search";
 const Headers = ({ startSearch, music, setMusic, isAdmin, setIsAdmin }) => {
    const profileCheckboxRef = useRef();
    const location = useLocation().pathname;
-   const navigate = useNavigate();
+   let navigate = useNavigate();
 
    const onNavItemClick = () => {
       setMusic({ ...music, isPlaying: false });
@@ -15,11 +15,10 @@ const Headers = ({ startSearch, music, setMusic, isAdmin, setIsAdmin }) => {
    };
 
    const onLogout = () => {
-      localStorage.removeItem("saveTracks");
-      profileCheckboxRef.current.checked = false;
-
       setIsAdmin({});
       navigate("/");
+      profileCheckboxRef.current.checked = false;
+      localStorage.removeItem("saveTracks");
    };
 
    return (

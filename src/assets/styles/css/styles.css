@@ -651,9 +651,12 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   height: 30px;
   padding: 20px 10px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.9);
   /* transform: rotate(-90deg); */
   /* transform-origin: 40% -60%; */
+}
+.playerControls .speakerContainer .speaker .volume {
+  cursor: pointer;
 }
 .playerControls .speakerContainer .speaker label {
   color: hsl(0deg, 0%, 100%);

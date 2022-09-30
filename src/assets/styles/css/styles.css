@@ -13,6 +13,7 @@ header {
   max-width: 1440px;
   min-width: 350px;
   position: relative;
+  border-bottom: 1px solid purple;
 }
 @media (min-width: 768px) {
   header {
@@ -395,7 +396,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   padding: 10px;
   border-radius: 5px;
   width: 100%;
-  background: hsl(0deg, 0%, 100%);
+  background: rgb(110, 49, 49);
   transition: all 200ms ease-in-out;
   position: relative;
 }
@@ -485,7 +486,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
   background: hsl(0deg, 0%, 100%);
   transition: all 200ms ease-in-out;
-  background: white;
+  background: rgb(218, 218, 218);
   position: relative;
 }
 .songContainer .cardSongContainer .cardSong:hover {
@@ -727,6 +728,7 @@ input[type='range'] {
   font-size: 14px;
   font-weight: 500;
   padding: 20px;
+  border-top: 1px solid purple;
 }
 .myFooters .codedBy {
   display: flex;
@@ -1257,7 +1259,7 @@ input[type='range'] {
   border-radius: 5px;
   max-width: 320px;
   width: 100%;
-  background: white;
+  background: black;
   transition: all 200ms ease-in-out;
   position: relative;
 }

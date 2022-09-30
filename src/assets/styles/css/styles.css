@@ -261,7 +261,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status {
   font-size: 18px;
-  color: white;
+  color: purple;
   font-weight: 600;
 }
 @media (min-width: 992px) {
@@ -272,11 +272,11 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status span {
   font-weight: 400;
   font-size: 18px;
-  color: white;
+  color: purple;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .title {
   font-size: 14px;
-  color: white;
+  color: purple;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot {
   display: flex;
@@ -368,6 +368,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .songContainer h2 {
   font-size: 30px;
   padding: 10px;
+  color: purple;
 }
 .songContainer .cardSongContainer {
   display: flex;
@@ -455,7 +456,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .songContainer h2 {
   font-size: 30px;
   padding: 10px;
-  color: white;
+  color: purple;
 }
 .songContainer .cardSongContainer {
   display: flex;

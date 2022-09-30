@@ -704,7 +704,6 @@ input[type='range'] {
   justify-content: center;
   gap: 20px;
   min-height: 100vh;
-  background: purple;
   max-width: 1440px;
   width: 100%;
 }

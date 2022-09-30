@@ -13,7 +13,8 @@ const Playercontrols = ({ music, songs, setMusic, audioPlayer, index, setIndex, 
       audioPlayer.current[name] = value;
    };
 
-   const newIndex = index < songs.length - 1 ? index + 1 : index;
+   // const newIndex = index < songs.length - 1 ? index + 1 : index;
+   const newIndex = index < songs.length - 1 ? index : index;
 
    const nextSong = () => {
       setIndex(newIndex);
@@ -46,7 +47,7 @@ const Playercontrols = ({ music, songs, setMusic, audioPlayer, index, setIndex, 
                <div className="nextPlayArtist">{`by ${songs[newIndex].artist_name}`}</div>
             </div>
 
-            <div className="nextSongText">{`${songs.length - 1 === index ? "Last Song" : "Next Song"}`}</div>
+            {/* <div className="nextSongText">{`${songs.length - 1 === index ? "Last Song" : "Next Song"}`}</div> */}
          </div>
 
          <Playerbuttons music={music} setMusic={setMusic} index={index} setIndex={setIndex} audioPlayer={audioPlayer} />

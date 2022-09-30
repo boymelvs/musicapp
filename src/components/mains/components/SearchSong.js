@@ -72,7 +72,7 @@ const SearchSong = ({ songs, index, playSearch, music, setAllTracks, allTracks, 
             <div className="titleArtist">
                <div className="cardSongTitle">{song.title}</div>
 
-               <div className="cardSongArtist">{`by ${song.artist_name}`}</div>
+               <div className="cardSongArtist">{`${song.artist_name}`}</div>
             </div>
          </div>
       );

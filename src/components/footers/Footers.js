@@ -6,9 +6,9 @@ const Footers = () => {
    return (
       <footer className="myFooters">
          <div className="codedBy">
-            <img src={socialMedia.copyright} alt="copyfight" />
+         <i class="bi bi-c-circle"></i>
             <div>
-               <span>2022 Code by </span>
+               <span> 2022 Code by </span>
                <a href="https://github.com/boymelvs" target="_blank" rel="noreferrer noopener">
                   <span>KodegoPh WD10 Group 5</span>
                </a>

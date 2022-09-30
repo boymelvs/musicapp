@@ -8,7 +8,7 @@ header {
   justify-content: space-between;
   gap: 10px;
   width: 100%;
-  background: hsl(225deg, 48%, 46%);
+  background: rgb(255, 255, 255);
   padding: 10px 20px 40px 20px;
   max-width: 1440px;
   min-width: 350px;
@@ -46,7 +46,7 @@ header .myNavs {
   left: 0;
   width: 100%;
   text-align: center;
-  color: hsl(0deg, 0%, 100%);
+  color: rgb(91, 49, 112);
   padding-bottom: 10px;
 }
 @media (min-width: 768px) {
@@ -59,7 +59,8 @@ header .myNavs .menuItem {
   position: relative;
   cursor: pointer;
   text-decoration: none;
-  color: hsl(220deg, 56%, 95%);
+  color: rgb(91, 49, 112);
+  font-weight: 600;
 }
 header .myNavs .menuItem::before {
   content: "";
@@ -67,7 +68,7 @@ header .myNavs .menuItem::before {
   bottom: -5px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  border-bottom: 1px solid rgb(91, 49, 112);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -98,10 +99,9 @@ header .profileSearchContainer {
 }
 header .profileSearchContainer .searchForm .search {
   padding: 10px;
-  border-radius: 10px;
-  border: none;
+  border-radius: 15px;
+  border: 1px solid purple;
   outline: none;
-  background: hsl(220deg, 56%, 95%);
   background-image: url("../../images/search/search_black.svg");
   background-repeat: no-repeat;
   background-size: 30px;
@@ -113,7 +113,7 @@ header .profileSearchContainer .loginSignup {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 @media (max-width: 400px) {
   header .profileSearchContainer .loginSignup {
@@ -132,9 +132,10 @@ header .profileSearchContainer .loginSignup {
 }
 header .profileSearchContainer .loginSignup .login, header .profileSearchContainer .loginSignup .signup {
   text-decoration: none;
-  color: hsl(220deg, 56%, 95%);
+  color: purple;
   position: relative;
   cursor: pointer;
+  font-weight: 500;
 }
 header .profileSearchContainer .loginSignup .login::before, header .profileSearchContainer .loginSignup .signup::before {
   content: "";
@@ -142,7 +143,7 @@ header .profileSearchContainer .loginSignup .login::before, header .profileSearc
   bottom: -5px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  border-bottom: 1px solid white;
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -159,7 +160,7 @@ header .profileSearchContainer .avatarContainer .avatar {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  border: 2px solid hsl(220deg, 56%, 95%);
+  border: 2px solid white;
   cursor: pointer;
 }
 header .profileSearchContainer .avatarContainer #profileCheckbox {
@@ -170,8 +171,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox {
 header .profileSearchContainer .avatarContainer .profile {
   display: none;
   flex-direction: column;
-  color: hsl(225deg, 48%, 46%);
-  background: hsl(220deg, 56%, 95%);
+  color: purple;
+  background: white;
   border-radius: 5px;
   position: absolute;
   top: 70px;
@@ -183,11 +184,11 @@ header .profileSearchContainer .avatarContainer .profile .viewProfile, header .p
   padding: 20px 50px;
   font-weight: 700;
   text-decoration: none;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
 }
 header .profileSearchContainer .avatarContainer .profile .viewProfile:hover, header .profileSearchContainer .avatarContainer .profile .logout:hover {
-  color: hsl(220deg, 56%, 95%);
-  background: hsl(225deg, 48%, 46%);
+  color: white;
+  background: purple;
   cursor: pointer;
 }
 header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .profile {
@@ -260,7 +261,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status {
   font-size: 18px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
   font-weight: 600;
 }
 @media (min-width: 992px) {
@@ -271,11 +272,11 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .status span {
   font-weight: 400;
   font-size: 18px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayStatus .title {
   font-size: 14px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .cardPlayDot {
   display: flex;
@@ -318,7 +319,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel {
   position: relative;
   font-weight: 700;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
 }
 .cardPlayContainer .cardPlay .titleDotContainer .addFavorite .addFaveLabel::before {
   content: "";
@@ -326,7 +327,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   bottom: -5px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(225deg, 48%, 46%);
+  border-bottom: 1px solid purple;
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -454,7 +455,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .songContainer h2 {
   font-size: 30px;
   padding: 10px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .songContainer .cardSongContainer {
   display: flex;
@@ -483,7 +484,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
   background: hsl(0deg, 0%, 100%);
   transition: all 200ms ease-in-out;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   position: relative;
 }
 .songContainer .cardSongContainer .cardSong:hover {
@@ -541,7 +542,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
   max-width: 1440px;
   min-width: 350px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(48, 27, 70);
   z-index: 99;
 }
 .player .progress {
@@ -549,7 +550,6 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   flex-basis: 100%;
   height: 10px;
   padding: 2px 0;
-  background: rgba(0, 0, 0, 0.5);
   position: relative;
 }
 .player .progress .progressFilled {
@@ -588,7 +588,6 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   min-height: 50px;
   height: 100%;
   border-radius: 5px;
-  background: hsl(220deg, 56%, 95%);
   overflow: hidden;
   cursor: pointer;
 }
@@ -614,9 +613,11 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .playerControls .nextToPlay .nextPlayTitleArtist .nextPlayTitle {
   font-weight: 700;
+  color: white;
 }
 .playerControls .nextToPlay .nextPlayTitleArtist .nextPlayArtist {
   font-size: 14px;
+  color:white;
 }
 .playerControls .nextToPlay:hover .nextPlayBtn {
   display: block;
@@ -651,13 +652,17 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   height: 30px;
   padding: 20px 10px;
-  background: rgba(0, 0, 0, 0.9);
   /* transform: rotate(-90deg); */
   /* transform-origin: 40% -60%; */
 }
-.playerControls .speakerContainer .speaker .volume {
+.playerControls .speakerContainer .speaker .volume{
   cursor: pointer;
 }
+
+input[type='range'] {
+  background-color: purple;
+}
+
 .playerControls .speakerContainer .speaker label {
   color: hsl(0deg, 0%, 100%);
 }
@@ -684,11 +689,10 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 
 .myMain {
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   width: 100%;
   min-height: 100vh;
   max-width: 1440px;
-  background: hsl(225deg, 48%, 46%);
   min-width: 350px;
 }
 
@@ -699,13 +703,13 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   justify-content: center;
   gap: 20px;
   min-height: 100vh;
-  background: hsl(225deg, 48%, 46%);
+  background: purple;
   max-width: 1440px;
   width: 100%;
 }
 .loadingContainer .loadingText {
   font-size: 20px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 
 .myFooters {
@@ -714,13 +718,14 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: hsl(225deg, 48%, 46%);
+  background: rgb(255, 255, 255);
   height: 70px;
   width: 100%;
   max-width: 1440px;
   min-width: 350px;
-  color: hsl(0deg, 0%, 100%);
+  color: rgb(91, 49, 112);
   font-size: 14px;
+  font-weight: 500;
   padding: 20px;
 }
 .myFooters .codedBy {
@@ -732,10 +737,11 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .myFooters .codedBy img {
   width: 10px;
+  background-color: rgb(91, 49, 112);
 }
 .myFooters .codedBy a {
   text-decoration: none;
-  color: hsl(0deg, 0%, 100%);
+  color: rgb(91, 49, 112);
 }
 .myFooters .codedBy a span {
   position: relative;
@@ -746,7 +752,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   bottom: -5px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(0deg, 0%, 100%);
+  border-bottom: 1px solid rgb(91, 49, 112);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -766,7 +772,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   position: relative;
   cursor: pointer;
   text-decoration: none;
-  color: hsl(0deg, 0%, 100%);
+  color: rgb(91, 49, 112);
 }
 .myFooters .termsPrivacyContainer .policy::before {
   content: "";
@@ -774,7 +780,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   bottom: -5px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(220deg, 56%, 95%);
+  border-bottom: 1px solid purple;
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -801,7 +807,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 20px;
   padding: 30px;
   border-radius: 5px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   width: 350px;
 }
 @media (min-width: 768px) {
@@ -820,19 +826,18 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .loginContainer #loginForm .field label {
   display: block;
   font-weight: 600;
-  color: hsl(225deg, 48%, 46%);
   font-size: 14px;
 }
 .loginContainer #loginForm .field input {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
 }
 .loginContainer #loginForm .field input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple
 }
 .loginContainer #loginForm .field input.active {
   background-image: url("../../images/error/error.svg");
@@ -858,8 +863,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   padding: 15px;
   width: 100%;
-  background: hsl(225deg, 48%, 46%);
-  color: hsl(220deg, 56%, 95%);
+  background: purple;
+  color: white;
   font-size: 16px;
 }
 .loginContainer #loginForm .loginBtn:hover {
@@ -887,7 +892,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 10px;
   padding: 30px;
   border-radius: 5px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   width: 350px;
 }
 @media (min-width: 768px) {
@@ -919,19 +924,19 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .signupContainer #signupForm .field label {
   display: block;
   font-weight: 600;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   font-size: 14px;
 }
 .signupContainer #signupForm .field input {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
 }
 .signupContainer #signupForm .field input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
 }
 .signupContainer #signupForm .field input.active {
   background-image: url("../../images/error/error.svg");
@@ -957,8 +962,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   padding: 15px;
   width: 100%;
-  background: hsl(225deg, 48%, 46%);
-  color: hsl(220deg, 56%, 95%);
+  background: purple;
+  color: white;
   font-size: 16px;
 }
 .signupContainer #signupForm .signupbtn:hover {
@@ -980,7 +985,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .createPlaylistContainer .title {
   text-align: center;
   font-size: 35px;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   padding-bottom: 20px;
   font-weight: 700;
 }
@@ -997,7 +1002,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   padding: 10px;
   width: 100%;
-  background: hsl(225deg, 48%, 46%);
+  background: purple;
   color: hsl(0deg, 0%, 100%);
   font-size: 16px;
 }
@@ -1048,9 +1053,9 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   margin-top: -100px;
   width: 350px;
   padding: 35px;
-  border: 1px solid hsl(225deg, 48%, 46%);
+  border: 1px solid purple;
   border-radius: 5px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   position: relative;
   z-index: 99;
 }
@@ -1072,17 +1077,17 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   font-weight: 500;
 }
 .modal .modalForm .modalName h2 {
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
 }
 .modal .modalForm .modalName input {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
 }
 .modal .modalForm .modalName input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
 }
 .modal .modalForm .btnContainer {
   display: flex;
@@ -1093,7 +1098,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
 }
 .modal .modalForm .btnContainer .btn {
-  border: 1px solid hsl(225deg, 48%, 46%);
+  border: 1px solid purple;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -1108,12 +1113,12 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   transform: scale(0.99);
 }
 .modal .modalForm .btnContainer .cancelBtn {
-  color: hsl(220deg, 56%, 95%);
-  background: hsl(225deg, 48%, 46%);
+  color: white;
+  background: purple;
 }
 .modal .modalForm .btnContainer .deleteBtn {
-  background: hsl(220deg, 56%, 95%);
-  color: hsl(225deg, 48%, 46%);
+  background: white;
+  color: purple;
 }
 
 .notFound {
@@ -1127,7 +1132,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .notFound .notFoundName h2 {
   font-size: 20px;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 
 .profileContainer {
@@ -1162,8 +1167,8 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 20px;
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
-  background: hsl(220deg, 56%, 95%);
-  border: 1px solid hsl(225deg, 48%, 46%);
+  background: white;
+  border: 1px solid purple;
   max-width: 350px;
   position: relative;
 }
@@ -1186,7 +1191,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .profileContainer .profile .profileCard .profInfo .name {
   font-size: 20px;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   font-weight: 700;
   text-align: center;
   max-width: 350px;
@@ -1197,7 +1202,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   right: 10px;
   text-decoration: none;
   font-size: 14px;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   cursor: pointer;
 }
 .profileContainer .profile .profileCard .profInfo .name .edit::before {
@@ -1206,7 +1211,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   bottom: -3px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid hsl(225deg, 48%, 46%);
+  border-bottom: 1px solid purple;
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -1224,7 +1229,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .profileContainer .favoritesContainer h2 {
   text-align: center;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .profileContainer .favoritesContainer .favorites {
   display: flex;
@@ -1252,7 +1257,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border-radius: 5px;
   max-width: 320px;
   width: 100%;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   transition: all 200ms ease-in-out;
   position: relative;
 }
@@ -1307,7 +1312,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background: hsl(225deg, 48%, 46%);
+  background: purple;
   z-index: 10;
   border-radius: 5px;
   margin-top: 30px;
@@ -1315,7 +1320,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .editProfileContainer .profile h2 {
   text-align: center;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .editProfileContainer .profile .delete {
   position: absolute;
@@ -1325,7 +1330,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   border: none;
   border-radius: 5px;
   background: hsl(0deg, 100%, 63%);
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 .editProfileContainer .profile .delete:hover {
   box-shadow: 0 0 2px hsl(0deg, 100%, 63%);
@@ -1344,7 +1349,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   padding: 30px;
   width: 350px;
   border-radius: 5px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -1379,19 +1384,19 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 .editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field label {
   display: block;
   font-weight: 600;
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
   font-size: 14px;
 }
 .editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
 }
 .editProfileContainer .profile #editProfileForm .infoContainer .namesContainer .field input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
 }
 .editProfileContainer .profile #editProfileForm .infoContainer .profilePicContainer {
   display: flex;
@@ -1460,7 +1465,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
 }
 .editProfileContainer .profile #editProfileForm .btnContainer .btn {
-  border: 1px solid hsl(225deg, 48%, 46%);
+  border: 1px solid purple;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -1475,12 +1480,12 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   transform: scale(0.99);
 }
 .editProfileContainer .profile #editProfileForm .btnContainer .cancelBtn {
-  color: hsl(225deg, 48%, 46%);
-  background: hsl(220deg, 56%, 95%);
+  color:purple;
+  background: white;
 }
 .editProfileContainer .profile #editProfileForm .btnContainer .deleteBtn {
-  background: hsl(225deg, 48%, 46%);
-  color: hsl(220deg, 56%, 95%);
+  background: purple;
+  color: white;
 }
 
 .deleteContainer {
@@ -1512,7 +1517,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   margin-top: -100px;
   width: 350px;
   padding: 35px;
-  border: 1px solid hsl(225deg, 48%, 46%);
+  border: 1px solid purple;
   border-radius: 5px;
   background: hsl(0deg, 0%, 100%);
   position: relative;
@@ -1536,14 +1541,14 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   font-weight: 500;
 }
 .modalDelete .modalForm .modalName input {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
   border-radius: 5px;
   outline: none;
   width: 100%;
   padding: 10px;
 }
 .modalDelete .modalForm .modalName input:focus {
-  border: 1.5px solid hsl(225deg, 48%, 46%);
+  border: 1.5px solid purple;
 }
 .modalDelete .modalForm .btnContainer {
   display: flex;
@@ -1554,7 +1559,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   width: 100%;
 }
 .modalDelete .modalForm .btnContainer .btn {
-  border: 1px solid hsl(225deg, 48%, 46%);
+  border: 1px solid purple;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
@@ -1569,11 +1574,11 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 }
 .modalDelete .modalForm .btnContainer .cancelBtn {
   color: hsl(0deg, 0%, 100%);
-  background: hsl(225deg, 48%, 46%);
+  background: purple;
 }
 .modalDelete .modalForm .btnContainer .deleteBtn {
   background: hsl(0deg, 0%, 100%);
-  color: hsl(225deg, 48%, 46%);
+  color: purple;
 }
 
 .aboutContainer {
@@ -1584,17 +1589,41 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 0;
   width: 100%;
   padding: 30px;
-  color: hsl(220deg, 56%, 95%);
+  color: rgb(91, 49, 112);
 }
+
+.aboutContainer h1 {
+  font-size: 200%;
+}
+
 .aboutContainer h2 {
   width: 100%;
   text-align: center;
   padding: 10px 0;
+  font-size: 500%;
+
 }
+
+.aboutContainer h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 30%;
+}
+
 .aboutContainer .para {
   text-align: justify;
   max-width: 1000px;
   padding: 20px;
+  font-size: 100%;
+}
+
+.icons {
+  font-size: 600%;
+  text-align: center;
+}
+
+.text-icons {
+  font-size: 15%;
 }
 
 .privacyContainer {
@@ -1605,7 +1634,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
   gap: 0;
   width: 100%;
   padding: 30px;
-  color: hsl(220deg, 56%, 95%);
+  color: purple;
 }
 .privacyContainer h2 {
   width: 100%;
@@ -1628,7 +1657,7 @@ header .profileSearchContainer .avatarContainer #profileCheckbox:checked ~ .prof
 
 body {
   position: relative;
-  color: hsl(220deg, 56%, 95%);
+  color: white;
 }
 
 .container {
@@ -1639,7 +1668,7 @@ body {
   gap: 1px;
   width: 100%;
   font-family: "Raleway", sans-serif;
-  background: hsl(220deg, 56%, 95%);
+  background: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

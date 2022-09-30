@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import play from "../../../assets/images/player/play.svg";
+import play from "../../../assets/images/player/plays.svg";
 import pause from "../../../assets/images/player/paused.svg";
 import rewind from "../../../assets/images/player/rewind.svg";
 import forward from "../../../assets/images/player/forward.svg";
